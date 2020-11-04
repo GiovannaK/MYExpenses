@@ -1,0 +1,208 @@
+{% extends 'base.html' %}     
+{% load static %}
+    
+{% block content %}     
+    
+    <main class="main-content">
+        <section class="center">
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 l4 m4">
+                        <div class="card card-expense 
+                            animate__animated animate__backInRight">
+                            <div class="card-content">
+                                <p class="title-card">Este mês</p>
+                                <p class="text-card">R$ 3600,00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 m4">
+                        <div class="card card-expense 
+                        animate__animated animate__backInRight">
+                            <div class="card-content">
+                                <p class="title-card">Há 3 meses</p>
+                                <p class="text-card">R$ 5000,00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 m4">
+                        <div class="card card-expense 
+                        animate__animated animate__backInRight">
+                            <div class="card-content">
+                                <p class="title-card">Este ano</p>
+                                <p class="text-card">R$ 20.000,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="center scrollspy" id="search">
+            <div class="container">
+                <div class="container search-container">
+                    <h1 class="title center">Meus gastos</h1>
+                    <div class="row">
+                        <div class="col l12 s10 m12">
+                            <form action="">
+                                <div class="input-field search">
+                                    <input class="white search-input" type="text" name="" id="">
+                                    <label class="label-icon" for="search">
+                                        <i class="material-icons right black-text">search</i>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="modal" id="modal1">
+                        <div class="modal-content">
+                            <h3 class="text-card">
+                                Tem certeza que deseja excluir "expenses1"?
+                            </h3>
+                            <a href="#" class="btn btn-delete">Apagar</a>
+                        </div>
+                    </div>
+                    <div class="col l4 m6 s12">
+                        <div class="card card-expense">
+                            <div class="card-content">
+                                <a href="#modal1" class="modal-trigger">
+                                    <i class="material-icons left">
+                                        close
+                                    </i>
+                                </a>
+                                <p class="title-card activator">
+                                    Roupas<i class="material-icons right">
+                                    more_vert</i>
+                                </p>
+                                <p class="text-card">R$ 2000,00</p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title title-card">
+                                    <a href="#"><i class="material-icons left">
+                                        mode_edit</i>
+                                    </a>
+                                    Categoria<i class="material-icons right">
+                                    close</i>
+                                </span>
+                                <p class="text-card">
+                                    Here is some more information about this product 
+                                    that is only revealed once clicked on.
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <p class="text-card">21/10/2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 m6 s12">
+                        <div class="card card-expense">
+                            <div class="card-content">
+                                <a href="#modal1" class="modal-trigger">
+                                    <i class="material-icons left">
+                                        close
+                                    </i>
+                                </a>
+                                <p class="title-card activator">
+                                    Alimentação<i class="material-icons right">
+                                    more_vert</i>
+                                </p>
+                                <p class="text-card">R$ 600,00</p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title title-card">
+                                    <a href="#"><i class="material-icons left">
+                                        mode_edit</i>
+                                    </a>
+                                    Categoria<i class="material-icons right">
+                                    close</i>
+                                </span>
+                                <p class="text-card">
+                                    Here is some more information about this product 
+                                    that is only revealed once clicked on.
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <p class="text-card">21/10/2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 m6 s12">
+                        <div class="card card-expense">
+                            <div class="card-content">
+                                <a href="#modal1" class="modal-trigger">
+                                    <i class="material-icons left">
+                                        close
+                                    </i>
+                                </a>
+                                <p class="title-card activator">
+                                    Lazer<i class="material-icons right">
+                                    more_vert</i>
+                                </p>
+                                <p class="text-card">R$ 1000,00</p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title title-card">
+                                    <a href="#"><i class="material-icons left">
+                                        mode_edit</i>
+                                    </a>
+                                    Categoria<i class="material-icons right">
+                                    close</i>
+                                </span>
+                                <p class="text-card">
+                                    Here is some more information about this product 
+                                    that is only revealed once clicked on.
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <p class="text-card">21/10/2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn">
+                    <a href="#" class="btn-floating btn-large float-btn">
+                        <i class="large material-icons">add</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            blue tooltipped" data-position="left" 
+                            data-tooltip="Perfil">
+                                <i class="material-icons">person</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            float-btn-content tooltipped" data-position="left" 
+                            data-tooltip="Adicionar novo gasto">
+                                <i class="material-icons">create</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de ganhos">
+                                <i class="material-icons">trending_up</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de gastos">
+                                <i class="material-icons">trending_down</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#search" class="btn-floating 
+                            blue tooltipped" data-position="left" 
+                            data-tooltip="Pesquisar">
+                                <i class="material-icons">search</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </section>    
+    </main>
+{% endblock %}

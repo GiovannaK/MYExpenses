@@ -1,0 +1,49 @@
+@import '../components/buttons';
+@import '../utils/variables';
+
+.main-update{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+    
+    .add-exp-form input:focus{
+       border-color: $register-input-focus;
+    }
+
+    .add-exp-form textarea:focus{
+        border-color: $register-input-focus;
+    }
+    
+    .btn-update{
+        @include primary-btn;
+    }
+
+    .update-icon{
+        color: $register-input-focus;        
+    }
+}
+
+.dark{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .add-exp-form input:focus{
+        border-color: $register-input-focus-dark;
+    }
+ 
+    .add-exp-form textarea:focus{
+         border-color: $register-input-focus-dark;
+    }
+     
+    .btn-update{
+         @include primary-btn;
+         background: $btn-bg-dark
+    }
+ 
+    .update-icon{
+         color: $register-input-focus-dark;        
+    }
+}

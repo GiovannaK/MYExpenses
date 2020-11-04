@@ -1,0 +1,58 @@
+.main-earn-dash{
+
+    .dash-tabs{
+        & li a{
+            color: $dashboard-label-color;
+        }
+    
+        & li a.active{
+            color: $dashboard-label-color;
+            background-color: $dashboard-label-bg;
+        }
+    
+        & .indicator{
+            background-color: $dashboard-label-color;
+        }
+    }
+    
+    .title{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        color: $title-color;
+    }
+
+    .parallax-container{
+        height: 20vh;
+    }
+}
+
+.dark{
+
+    .dash-tabs{
+        & li a{
+            color: $dashboard-label-color;
+        }
+    
+        & li a.active{
+            color: $dashboard-label-color;
+            background-color: $dashboard-label-bg;
+        }
+    
+        & .indicator{
+            background-color: $dashboard-label-color;
+        }
+    }
+
+    .title{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        color: $title-color-dark;
+    }  
+    
+    .parallax-container{
+        height: 20vh;
+    }
+}
+

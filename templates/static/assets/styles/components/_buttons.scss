@@ -1,0 +1,39 @@
+@mixin primary-btn{
+    width: 100%;
+    background: $btn-bg;
+    margin-top: 2rem;
+    
+    &:hover{
+        background: $btn-bg-hover;
+    }    
+}
+
+@mixin secondary-btn{
+    background: $btn-bg;
+    
+    &:hover{
+        background: $btn-bg-hover;
+    }   
+}
+
+@mixin primary-switch{
+    
+    background-color: $btn-bg !important;
+    
+    &::after{
+        background-color: $btn-bg !important;
+    }
+      
+}
+
+@mixin delete-btn{
+    .btn-delete{
+        background-color: $btn-delete;
+        transition: .5s;
+    
+        &:hover{
+            background-color: $btn-delete-hover;
+        }
+    }
+        
+}

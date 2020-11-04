@@ -1,0 +1,10 @@
+@import '../utils/variables';
+
+body{
+    background-color: $bg-color;
+}
+
+body.dark{
+    background-color: $bg-color-dark;
+}
+

@@ -1,0 +1,147 @@
+@import '../utils/variables';
+@import '../components/buttons';
+
+.main-content{
+    .search-container, .card-container{
+        margin-top: 5vh;
+    }
+    
+    .title{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        color: $title-color;
+    }
+    
+    .search-input{
+        padding-left: 4rem !important;
+    
+        &:focus{
+            border-color: $search-focus-boder;
+        }
+    }
+    
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .card-expense{
+        box-shadow: $box-shadow-card;
+        background-color: $card-bg;
+    }
+    
+    .card-expense{
+        transition: .5s;
+         &:hover{
+             transform: scale(1.03);
+         }
+    }
+    
+    .card-expense .card-reveal{
+        background-color: $card-bg;
+    }
+    
+    .float-btn{
+        background-color: $btn-bg;
+        
+        &:hover{
+            background-color: $btn-bg-hover;
+        }
+    
+    }
+    
+    .float-btn-content{
+        background-color: $float-btn-content-bg-color;
+    
+        &:hover{
+            background-color: $float-btn-content-bg-color-hover;
+        }
+    }
+    
+    .modal{
+        background-color: white;
+    
+        @include delete-btn;
+    }
+}
+
+.dark{
+    .search-container, .card-container{
+        margin-top: 5vh;
+    }
+    
+   
+    .search-input{
+        padding-left: 4rem !important;
+    
+        &:focus{
+            border-color: $search-focus-boder;
+        }
+    }
+    
+    .title{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        color: $title-color-dark;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color-dark;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color-dark;
+    }
+    
+    .card-expense{
+        box-shadow: $box-shadow-card;
+        background-color: $card-bg-dark;
+    }
+    
+    .card-expense{
+        transition: .5s;
+         &:hover{
+             transform: scale(1.03);
+         }
+    }
+    
+    .card-expense .card-reveal{
+        background-color: $card-bg-dark;
+    }
+    
+    .float-btn{
+        background-color: $btn-bg-dark;
+        
+        &:hover{
+            background-color: $btn-bg-hover-dark;
+        }
+    
+    }
+    
+    .float-btn-content{
+        background-color: $float-btn-content-bg-color;
+    
+        &:hover{
+            background-color: $float-btn-content-bg-color-hover;
+        }
+    }
+    
+    .modal{
+        background-color: $card-bg-dark;
+    
+        @include delete-btn;
+    }
+}
+
+

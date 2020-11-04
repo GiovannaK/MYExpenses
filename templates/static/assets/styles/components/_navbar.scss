@@ -1,0 +1,88 @@
+@import '../utils/variables';
+
+header{
+    .navbar{
+        background: $bg-nav-footer;
+    }
+    
+    .sidenav{
+        background-color: $sidenav-bg;
+        
+    }
+    
+    .logo, .sidenav-logo{
+        text-shadow: $text-shadow-logo;
+        color: $sidenav-color;
+    }    
+
+    .logo{
+        color: $sidenav-bg;
+    }
+    
+    .sidenav li a{
+        font-size: 1.2rem;
+        text-transform: uppercase; 
+        color: $sidenav-color;   
+        transition: .5s;
+    }
+    
+    .collapse-title{
+        color: $sidenav-color;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+    
+    .sidenav li a:hover{
+        display: block;
+        background: $sidenav-hover;
+    }
+    
+    .sidenav-logo{
+        font-size: 2rem;
+    }
+    
+    .collapsible-body{
+        background: $sidenav-bg;
+    }
+}
+
+.dark{
+    .navbar{
+        background: $bg-nav-footer-dark;
+    }
+    
+    .sidenav{
+        background-color: $sidenav-bg-dark;
+    }
+    
+    .logo, .sidenav-logo{
+        text-shadow: $text-shadow-logo;
+        color: $sidenav-color-dark;
+    }    
+    
+    .sidenav li a{
+        font-size: 1.2rem;
+        text-transform: uppercase; 
+        color: $sidenav-color-dark;   
+        transition: .5s;
+    }
+    
+    .collapse-title{
+        color: $sidenav-color-dark;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+    
+    .sidenav li a:hover{
+        display: block;
+        background: $sidenav-hover-dark;
+    }
+    
+    .sidenav-logo{
+        font-size: 2rem;
+    }
+    
+    .collapsible-body{
+        background: $sidenav-bg-dark;
+    }    
+}

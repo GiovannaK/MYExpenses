@@ -1,0 +1,128 @@
+{% extends 'base.html' %}     
+{% load static %}
+    
+{% block content %} 
+    
+    <main class="main-update">
+        <section>
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m10 l6 offset-m1 offset-l3">
+                        <div class="card card-exp card-update">
+                            <div class="card-content">
+                                <h1 class="title-card center">
+                                    ATUALIZAR GASTO
+                                </h1>
+                                <div class="divider"></div>
+                                <div class="row">
+                                    <form action="" class="add-exp-form">
+                                        <div class="row">
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">create</i>
+                                                <input type="text" class="validate">
+                                                <label for="title">Título</label>
+                                            </div>
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    format_list_bulleted
+                                                </i>
+                                                <select name="">
+                                                    <option value="1">Saúde</option>
+                                                    <option value="2">Alimentação</option>
+                                                </select>
+                                                <label>Categoria</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    attach_money
+                                                </i>
+                                                <input type="number" class="validate">
+                                                <label for="title">Valor</label>
+                                            </div>
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    monetization_on
+                                                </i>
+                                                <select name="">
+                                                    <option value="1">Real</option>
+                                                    <option value="2">Dólar</option>
+                                                </select>
+                                                <label>Moeda</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 l12 m12">
+                                                <i class="material-icons prefix update-icon">
+                                                    description
+                                                </i>
+                                                <textarea class="materialize-textarea"></textarea>
+                                                <label for="description">Descrição</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 l12 m12">
+                                                <i class="material-icons prefix 
+                                                    update-icon">date_range
+                                                </i>
+                                                <input type="date">
+                                                <label for="date">Data</label>
+                                            </div>
+                                        </div>  
+                                        <button type="submit" class="btn btn-update">
+                                            Atualizar
+                                        </button>                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn">
+                    <a href="#" class="btn-floating btn-large float-btn">
+                        <i class="large material-icons">add</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            blue tooltipped" data-position="left" 
+                            data-tooltip="Perfil">
+                                <i class="material-icons">person</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Meus ganhos">
+                                <i class="material-icons">monetization_on</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de ganhos">
+                                <i class="material-icons">trending_up</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de gastos">
+                                <i class="material-icons">trending_down</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Meus gastos">
+                                <i class="material-icons">money_off</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+            </div>
+        </section>                  
+    </main>
+
+{% endblock %}    

@@ -1,0 +1,79 @@
+@import '../utils/variables';
+@import '../components/buttons';
+
+.main-update-user{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .update-info-card{
+        box-shadow: $box-shadow-card;
+    }
+    
+    .update-info-form input{
+        border-color: $form-profile-textarea-border;
+    
+        &:focus{
+            border-color: $register-input-focus;
+        }
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .update-icon{
+        color: $register-input-focus;
+    }
+    
+    .change-user-info-btn{
+        @include primary-btn;
+    }
+}
+
+.dark{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .update-info-card{
+        box-shadow: $box-shadow-card;
+    }
+    
+    .update-info-form input{
+        border-color: $form-profile-textarea-border;
+    
+        &:focus{
+            border-color: $register-input-focus-dark;
+        }
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color-dark;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color-dark;
+    }
+    
+    .update-icon{
+        color: $register-input-focus-dark;
+    }
+    
+    .change-user-info-btn{
+        @include primary-btn;
+        background: $btn-bg-dark
+    }
+}

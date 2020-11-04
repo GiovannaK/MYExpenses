@@ -1,0 +1,26 @@
+@import '../utils/variables';;
+
+footer.main-footer{
+    background: $bg-nav-footer;
+    font-family: $font-family;
+
+    & .footer-title, .footer-text{
+        color: $footer-color;
+    }
+
+    & .footer-text{
+        font-size: 1.2rem;
+    }
+}
+
+
+footer.dark{
+    background: $bg-nav-footer-dark;
+    font-family: $font-family;
+    & .footer-title, .footer-text{
+    color: $footer-color;
+    }
+    & .footer-text{
+    font-size: 1.2rem;
+    }
+}

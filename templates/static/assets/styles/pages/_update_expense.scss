@@ -1,0 +1,72 @@
+.main-update{
+    
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .add-exp-form input:focus{
+       border-color: $register-input-focus;
+    }
+
+    .add-exp-form textarea:focus{
+        border-color: $register-input-focus;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .btn-update{
+        @include primary-btn;
+    }
+
+    .update-icon{
+        color: $register-input-focus;        
+    }
+}
+
+.dark{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .add-exp-form input:focus{
+        border-color: $register-input-focus-dark;
+    }
+
+    .add-exp-form label:focus{
+        color: $register-input-focus-dark;
+    }
+ 
+     .add-exp-form textarea:focus{
+        border-color: $register-input-focus-dark;
+     }
+     
+     .btn-update{
+        @include primary-btn;
+        background: $btn-bg-dark;
+        }
+
+     .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color-dark;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color-dark;
+    }
+ 
+     .update-icon{
+        color: $register-input-focus-dark;        
+     }
+}

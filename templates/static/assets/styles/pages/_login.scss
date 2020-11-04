@@ -1,0 +1,90 @@
+@import '../utils/variables';
+@import '../components/buttons';
+
+.main-login{
+    background-image: linear-gradient(rgba(0,0,0,0.4)), 
+    url("../../../assets/img/bg_login.jpg");    
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .card-login{
+        box-shadow: $box-shadow-card;
+        background: $card-register-bg;    
+
+        .login-btn{
+            @include primary-btn;
+        }
+    }
+
+    .form-register label{
+        color: $card-font-color;
+    }
+
+    .form-register input:focus{
+        border-color: $register-input-focus;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+}
+
+.dark{
+    //background-image: linear-gradient(rgba(0,0,0,0.4)), 
+    //url("../../../assets/img/bg_login.jpg");    
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .card-login{
+        box-shadow: $box-shadow-card;
+        background: $card-register-bg-dark;    
+
+        .login-btn{
+            @include primary-btn;
+            background: $btn-bg-dark
+        }
+    }
+
+    .form-register label{
+        color: $card-font-color-dark;
+    }
+
+    .form-register input{
+        color: $register-input-focus-dark;
+    }
+
+    .form-register input:focus{
+        border-color: $register-input-focus-dark;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color-dark;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color-dark;
+    }
+}
+

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}     
+{% load static %}
+    
+{% block content %}
+    <main class="main-landing-page">
+        <section>
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <img src="{% static 'assets/img/exp.png' %}">
+                        <div class="caption center-align">
+                            <h3 class="title-slides">Gerencie seus gastos</h3>
+                            <a href="#" class="btn-large btn-register">Cadastre-se</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="{% static 'assets/img/dash_earn.png' %}">
+                        <div class="caption center-align">
+                            <h3 class="title-slides">Visualize seu progresso</h3>
+                            <a href="#" class="btn-large btn-login">Faça Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+        <section class="section section-info">
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <h3 class="section-info-text center">
+                        <i class="medium material-icons center">local_atm</i>
+                        Com dificuldade para gerenciar sua 
+                        vida finaceira?
+                    </h3>
+                </div>
+                <div class="col s12 m4 l4">
+                    <h3 class="section-info-text center">
+                        <i class="medium material-icons center">create</i>  
+                        Cansou de usar papel e caneta?  
+                    </h3>
+                </div>
+                <div class="col s12 m4 l4">
+                    <h3 class="section-info-text center">
+                        <i class="medium material-icons center">trending_up</i>
+                        Quer acompanhar seu progresso para uma vida financeira
+                        mais estável?        
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <div class="card card-resources animate__animated 
+                        animate__bounceInLeft animate__delay-2s">
+                            <div class="card-content">
+                                <h4 class="title-card center">
+                                    <i class="small material-icons center">
+                                        show_chart
+                                    </i>
+                                    Visualize seus dados com  
+                                    gráficos interativos        
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="card card-resources  animate__animated 
+                        animate__bounceInLeft animate__delay-3s">
+                            <div class="card-content">
+                                <h4 class="title-card center">
+                                    <i class="small material-icons center">
+                                        insert_chart
+                                    </i>
+                                    Gere relatórios para ganhos e gastos                
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="card card-resources  animate__animated 
+                        animate__bounceInLeft animate__delay-4s">
+                            <div class="card-content">
+                                <h4 class="title-card center">
+                                    <i class="small material-icons center">
+                                        format_list_bulleted
+                                    </i>
+                                    categorias para seus ganhos ou gastos
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section-info">
+            <h3 class="section-info-text center">
+                Precisa usar o MYExpenses por longas horas?
+            </h3>
+            <h4 class="section-info-text center">
+                Ative o modo escuro no perfil!
+            </h4>
+        </section>
+        <section class="section">
+                <div class="row">
+                    <div class="col s12 m6 l6 animate__animated 
+                    animate__bounceInLeft animate__delay-4s">
+                        <div class="parallax-container parallax-landing-page">
+                            <div class="parallax">
+                                <img src="{% static 'assets/img/exp.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="parallax-container parallax-landing-page
+                        animate__animated animate__bounceInRight animate__delay-4s">
+                            <div class="parallax">
+                                <img src="{% static 'assets/img/exp_dark.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+{% endblock %}    
