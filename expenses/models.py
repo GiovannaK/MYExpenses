@@ -1,5 +1,5 @@
 from django.db import models
-
+from profiles.models import Profile
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nome da categoria")
@@ -13,6 +13,7 @@ class Category(models.Model):
            
 
 class Expenses(models.Model):
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="expense", default=None)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name="Categoria", blank=True, null=True)
     title = models.CharField(max_length=200, verbose_name="Título")
     description = models.CharField(max_length=800, verbose_name="Descrição")
