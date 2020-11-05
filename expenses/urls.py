@@ -1,6 +1,10 @@
 from django.urls import path
-from . import views
+from .views import ExpenseListView, HomeTemplateView
+
+
+app_name = 'expense'
 
 urlpatterns = [
-    path('', views.home, name="home")
+    path('', HomeTemplateView.as_view(), name="home"),
+    path('expenses/', ExpenseListView.as_view(), name="list")
 ]

@@ -63,6 +63,7 @@
                             <a href="#" class="btn btn-delete">Apagar</a>
                         </div>
                     </div>
+                    {% for expense in expenses %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
@@ -72,93 +73,29 @@
                                     </i>
                                 </a>
                                 <p class="title-card activator">
-                                    Roupas<i class="material-icons right">
+                                    {{expense.title}}<i class="material-icons right">
                                     more_vert</i>
                                 </p>
-                                <p class="text-card">R$ 2000,00</p>
+                                <p class="text-card">{{expense.quantity}}</p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title title-card">
                                     <a href="#"><i class="material-icons left">
                                         mode_edit</i>
                                     </a>
-                                    Categoria<i class="material-icons right">
+                                    {{expense.category}}<i class="material-icons right">
                                     close</i>
                                 </span>
                                 <p class="text-card">
-                                    Here is some more information about this product 
-                                    that is only revealed once clicked on.
+                                    {{expense.description}}
                                 </p>
                             </div>
                             <div class="card-action">
-                                <p class="text-card">21/10/2020</p>
+                                <p class="text-card">{{expense.date | date:"d/m/Y"}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col l4 m6 s12">
-                        <div class="card card-expense">
-                            <div class="card-content">
-                                <a href="#modal1" class="modal-trigger">
-                                    <i class="material-icons left">
-                                        close
-                                    </i>
-                                </a>
-                                <p class="title-card activator">
-                                    Alimentação<i class="material-icons right">
-                                    more_vert</i>
-                                </p>
-                                <p class="text-card">R$ 600,00</p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title title-card">
-                                    <a href="#"><i class="material-icons left">
-                                        mode_edit</i>
-                                    </a>
-                                    Categoria<i class="material-icons right">
-                                    close</i>
-                                </span>
-                                <p class="text-card">
-                                    Here is some more information about this product 
-                                    that is only revealed once clicked on.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <p class="text-card">21/10/2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col l4 m6 s12">
-                        <div class="card card-expense">
-                            <div class="card-content">
-                                <a href="#modal1" class="modal-trigger">
-                                    <i class="material-icons left">
-                                        close
-                                    </i>
-                                </a>
-                                <p class="title-card activator">
-                                    Lazer<i class="material-icons right">
-                                    more_vert</i>
-                                </p>
-                                <p class="text-card">R$ 1000,00</p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title title-card">
-                                    <a href="#"><i class="material-icons left">
-                                        mode_edit</i>
-                                    </a>
-                                    Categoria<i class="material-icons right">
-                                    close</i>
-                                </span>
-                                <p class="text-card">
-                                    Here is some more information about this product 
-                                    that is only revealed once clicked on.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <p class="text-card">21/10/2020</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="fixed-action-btn">
                     <a href="#" class="btn-floating btn-large float-btn">
