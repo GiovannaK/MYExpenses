@@ -18,6 +18,3 @@ class ExpenseListView(ListView):
         return context
     
     
-    
-    """ context_object_name = 'expenses'
-    queryset = Expenses.objects.all() """
