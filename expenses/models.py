@@ -13,11 +13,14 @@ class Category(models.Model):
            
 
 class Expenses(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name="expense", default=None)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name="Categoria", blank=True, null=True)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE, 
+    related_name="exp", default=None)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, 
+    verbose_name="Categoria", blank=True, null=True)
     title = models.CharField(max_length=200, verbose_name="Título")
     description = models.CharField(max_length=800, verbose_name="Descrição")
-    quantity = models.DecimalField(max_digits=19, decimal_places=2, verbose_name="Valor")
+    quantity = models.DecimalField(max_digits=19, decimal_places=2, 
+    verbose_name="Valor")
     date = models.DateField(verbose_name="Data")
 
     def __str__(self):
