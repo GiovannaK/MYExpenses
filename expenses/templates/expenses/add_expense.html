@@ -14,20 +14,23 @@
                                 </h1>
                                 <div class="divider"></div>
                                 <div class="row">
+                                    
                                     <form action="" class="add-exp-form">
                                         <div class="row">
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">create</i>
-                                                <input type="text" class="validate">
+                                                {{form.title}}
                                                 <label for="title">Título</label>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
                                                     format_list_bulleted
                                                 </i>
-                                                <select name="">
-                                                    <option value="1">Saúde</option>
-                                                    <option value="2">Alimentação</option>
+                                                <select>
+                                                    {% for category in form.category %}
+                                                    <option value="{{category}}">
+                                                    </option>
+                                                    {% endfor %}
                                                 </select>
                                                 <label>Categoria</label>
                                             </div>
@@ -37,16 +40,18 @@
                                                 <i class="material-icons prefix update-icon">
                                                     attach_money
                                                 </i>
-                                                <input type="number" class="validate">
+                                                {{form.quantity}}
                                                 <label for="title">Valor</label>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
                                                     monetization_on
                                                 </i>
-                                                <select name="">
-                                                    <option value="1">Real</option>
-                                                    <option value="2">Dólar</option>
+                                                <select size="3">
+                                                    {% for c in form.currency %}
+                                                    <option value="{{c}}">
+                                                    </option>
+                                                    {% endfor %}    
                                                 </select>
                                                 <label>Moeda</label>
                                             </div>
@@ -56,7 +61,7 @@
                                                 <i class="material-icons prefix update-icon">
                                                     description
                                                 </i>
-                                                <textarea class="materialize-textarea"></textarea>
+                                                {{form.description}}
                                                 <label for="description">Descrição</label>
                                             </div>
                                         </div> 
@@ -65,7 +70,7 @@
                                                 <i class="material-icons prefix 
                                                     update-icon">date_range
                                                 </i>
-                                                <input type="date">
+                                                {{form.date}}
                                                 <label for="date">Data</label>
                                             </div>
                                         </div>  
