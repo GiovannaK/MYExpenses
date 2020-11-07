@@ -12,7 +12,6 @@ import os
 import json
 
 
-
 class HomeTemplateView(TemplateView):
     template_name = 'expenses/landing_page.html'
 
@@ -36,7 +35,6 @@ class ExpenseCreateView(CreateView, CurrencyCreationObjectMixin):
     def form_valid(self, form):
         instance = form.save(commit=False)
         instance.author = Profile.objects.get(user=self.request.user)
-        instance.save()
         return super(ExpenseCreateView, self).form_valid(form)
     
     def get_success_url(self):
