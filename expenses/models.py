@@ -28,7 +28,7 @@ class Currencies(models.Model):
 
 
 class Expenses(models.Model):
-    currency = models.ForeignKey(Currencies, on_delete=models.CASCADE, default=None)
+    currency = models.ForeignKey(Currencies, on_delete=models.CASCADE, blank=True, null=True)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, 
     related_name="exp", default=None)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, 
