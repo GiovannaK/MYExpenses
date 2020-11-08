@@ -28,11 +28,10 @@
                                                 <i class="material-icons prefix update-icon">
                                                     format_list_bulleted
                                                 </i>
-                                                <select>
+                                                <select id="id_category" name="category">
                                                     {% for category in form.category %}
-                                                    <option value="{{category}}">
-                                                    </option>
-                                                    {% endfor %}
+                                                    {{category}}
+                                                    {% endfor %}   
                                                 </select>
                                                 <label>Categoria</label>
                                             </div>
@@ -49,11 +48,10 @@
                                                 <i class="material-icons prefix update-icon">
                                                     monetization_on
                                                 </i>
-                                                <select size="3">
+                                                <select id="id_currency" name="currency">
                                                     {% for c in form.currency %}
-                                                    <option value="{{c}}">
-                                                    </option>
-                                                    {% endfor %}    
+                                                    {{c}}
+                                                    {% endfor %}  
                                                 </select>
                                                 <label>Moeda</label>
                                             </div>

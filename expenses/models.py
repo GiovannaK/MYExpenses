@@ -6,7 +6,7 @@ import json
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Nome da categoria")
+    name = models.CharField(max_length=100, verbose_name="Nome da categoria", unique=True)
 
     def __str__(self):
         return self.name
@@ -28,11 +28,11 @@ class Currencies(models.Model):
 
 
 class Expenses(models.Model):
-    currency = models.ForeignKey(Currencies, on_delete=models.CASCADE, blank=True, null=True)
+    currency = models.ForeignKey(Currencies, on_delete=models.CASCADE)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE, 
     related_name="exp", default=None)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, 
-    verbose_name="Categoria", blank=True, null=True)
+    verbose_name="Categoria")
     title = models.CharField(max_length=200, verbose_name="Título")
     description = models.CharField(max_length=800, verbose_name="Descrição")
     quantity = models.DecimalField(max_digits=19, decimal_places=2, 
