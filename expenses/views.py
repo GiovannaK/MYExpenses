@@ -91,10 +91,16 @@ class ExpenseUpdateView(UpdateView):
 class ExpenseDeleteView(DeleteView):
     model = Expenses    
     success_url = reverse_lazy('expense:list')
+    template_name = 'expenses/delete_expense.html'
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)
-        return self.model.objects.filter(pk=pk, author=profile).delete()
-    
+        queryset = Expenses.objects.filter(author=profile, pk=self.kwargs['pk'])
+        return queryset
+  
+
+    def get_success_url(self):
+        messages.success(self.request, f'{self.object.title} foi excluído com sucesso!')
+        return reverse('expense:list')    
 
 

@@ -1518,4 +1518,97 @@ body.dark {
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
 }
+
+.main-delete-exp {
+  background-image: url("../../../assets/img/delete-exp_.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.main-delete-exp .container {
+  margin-top: 5vh;
+}
+
+.main-delete-exp .title-card {
+  font-size: 1.7rem;
+  margin-bottom: 1rem !important;
+  color: #181818;
+}
+
+.main-delete-exp .text-card {
+  font-size: 1.5rem;
+  color: #181818;
+}
+
+.main-delete-exp .btn-delete, .main-delete-exp .btn-cancel {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #ee4949;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.main-delete-exp .btn-delete:hover, .main-delete-exp .btn-cancel:hover {
+  background-color: rgba(255, 104, 104, 0.89);
+}
+
+.main-delete-exp .btn-cancel {
+  background-color: rgba(255, 153, 0, 0.61);
+  color: #181818;
+}
+
+.main-delete-exp .btn-cancel:hover {
+  background-color: rgba(64, 236, 64, 0.534);
+}
+
+.dark {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.dark .container {
+  margin-top: 5vh;
+}
+
+.dark .card {
+  background-color: #464646;
+}
+
+.dark .title-card {
+  font-size: 1.7rem;
+  margin-bottom: 1rem !important;
+  color: white;
+}
+
+.dark .text-card {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.dark .btn-delete, .dark .btn-cancel {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #ee4949;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.dark .btn-delete:hover, .dark .btn-cancel:hover {
+  background-color: rgba(255, 104, 104, 0.89);
+}
+
+.dark .btn-cancel {
+  background-color: rgba(255, 153, 0, 0.61);
+  color: #181818;
+}
+
+.dark .btn-cancel:hover {
+  background-color: rgba(64, 236, 64, 0.534);
+}
 /*# sourceMappingURL=main.css.map */

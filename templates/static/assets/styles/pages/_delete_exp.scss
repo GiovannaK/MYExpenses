@@ -1,0 +1,89 @@
+.main-delete-exp{
+    background-image: url('../../../assets/img/delete-exp_.jpg');
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(80%);
+    
+    .container{
+        margin-top: 5vh;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+
+    .btn-delete, .btn-cancel{
+        width: 100%;
+        margin-top: 2rem;
+        background-color: $btn-delete;
+        transition: .5s;
+
+        &:hover{
+            background-color: $btn-delete-hover;
+        }
+    }
+
+    .btn-cancel{
+        background-color: $msg-bg-warning;
+        color: $sidenav-color;
+
+        &:hover{
+            background-color: $msg-bg-success;
+        }
+    }
+}
+
+
+.dark{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(80%);
+    
+    .container{
+        margin-top: 5vh;
+    }
+
+    .card{
+        background-color: $card-bg-dark;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color-dark;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color-dark;
+    }
+
+    .btn-delete, .btn-cancel{
+        width: 100%;
+        margin-top: 2rem;
+        background-color: $btn-delete;
+        transition: .5s;
+
+        &:hover{
+            background-color: $btn-delete-hover;
+        }
+    }
+
+    .btn-cancel{
+        background-color: $msg-bg-warning;
+        color: $sidenav-color;
+
+        &:hover{
+            background-color: $msg-bg-success;
+        }
+    }
+}

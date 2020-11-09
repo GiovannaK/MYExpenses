@@ -55,23 +55,12 @@
                     </div>
                 </div>
                 <div class="row center">
-                    <form action="{% url 'expense:delete' expense.pk %}" method="POST">
-                        {% csrf_token %}
-                        <div class="modal" id="modal1">
-                            <div class="modal-content">
-                                <h3 class="text-card">
-                                    Tem certeza que deseja excluir?
-                                </h3>
-                                <button type="submit" class="btn btn-delete">Excluir</button>
-                            </div>
-                        </div>
-                    </form>
                     {% include 'parciais/messages.html'%}
                     {% for expense in expenses %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
-                                <a href="#modal1" class="modal-trigger">
+                                <a href="{% url 'expense:delete' expense.pk %}" class="modal-trigger">
                                     <i class="material-icons left">
                                         close
                                     </i>

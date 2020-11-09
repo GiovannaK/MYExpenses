@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="main-delete-exp" style="background-image: url('{% static 'assets/img/delete-exp_.jpg' %}')">
+        <section>
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m10 l6 offset-m1 offset-l3">
+                        <div class="card card-delete">
+                            <div class="card-content">
+                                    <h1 class="title-card center">
+                                        Tem certeza que deseja excluir {{object.title}}?
+                                    </h1>
+                                    <div class="divider"></div>
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <a href="{% url 'expense:list' %}" class="btn btn-cancel">
+                                            Cancelar
+                                        </a>
+                                        <button type="submit" class="btn btn-delete 
+                                        center">
+                                            Excluir
+                                        </button>                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn">
+                    <a href="#" class="btn-floating btn-large float-btn">
+                        <i class="large material-icons">add</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            blue tooltipped" data-position="left" 
+                            data-tooltip="Perfil">
+                                <i class="material-icons">person</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Meus ganhos">
+                                <i class="material-icons">monetization_on</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de ganhos">
+                                <i class="material-icons">trending_up</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de gastos">
+                                <i class="material-icons">trending_down</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Meus gastos">
+                                <i class="material-icons">money_off</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>                  
+    </main>
+{% endblock %}
+    
