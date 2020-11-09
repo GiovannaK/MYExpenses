@@ -1,0 +1,19 @@
+{% load static %}
+{% if messages %}
+<link rel="stylesheet" href="{% static 'assets/styles/main.css' %}">
+    {% for message in messages%}
+    <div class="row">
+        <div class="col s12 m10 l6 offset-l3 offset-m1">
+            <div class="card {{message.tags}} msg">
+                <div class="card-content">
+                    <a href="#" class="close-msg"><i class="material-icons left">
+                        close</i>
+                    </a>
+                    <p class="text-card center">{{message}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endif %}    
+    <script src="{% static 'assets/js/messages.js' %}"></script>

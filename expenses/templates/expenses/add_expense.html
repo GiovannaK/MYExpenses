@@ -23,6 +23,10 @@
                                                 <i class="material-icons prefix update-icon">create</i>
                                                 {{form.title}}
                                                 <label for="title">Título</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.title.errors}}
+                                                </span>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
@@ -34,6 +38,10 @@
                                                     {% endfor %}   
                                                 </select>
                                                 <label>Categoria</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.category.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -43,6 +51,10 @@
                                                 </i>
                                                 {{form.quantity}}
                                                 <label for="title">Valor</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.quantity.errors}}
+                                                </span>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
@@ -54,6 +66,10 @@
                                                     {% endfor %}  
                                                 </select>
                                                 <label>Moeda</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.currency.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -63,6 +79,10 @@
                                                 </i>
                                                 {{form.description}}
                                                 <label for="description">Descrição</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.description.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -72,10 +92,13 @@
                                                 </i>
                                                 {{form.date}}
                                                 <label for="date">Data</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.date.errors}}
+                                                </span>
                                             </div>
                                         </div>  
                                         <button type="submit" class="btn btn-add">Adicionar</button>                    
-                                        {{form.errors}}
                                     </form>
                                 </div>
                             </div>

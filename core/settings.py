@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+from django.contrib.messages import constants
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,3 +136,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+MESSAGE_TAGS = {
+    constants.ERROR: 'msg-error',
+    constants.SUCCESS: 'msg-success',
+    constants.WARNING: 'msg-warning',
+    constants.INFO: 'msg-info',
+}

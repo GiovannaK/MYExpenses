@@ -4,6 +4,7 @@ from profiles.models import Profile
 from django.views.generic.base import TemplateView
 from django.views.generic import CreateView
 from django.views.generic.list import ListView
+from django.contrib import messages
 from django.conf import settings
 from django.urls import reverse
 from .forms import ExpenseCreationForm
@@ -47,12 +48,18 @@ class ExpenseCreateView(CreateView):
     form_class = ExpenseCreationForm
     
     def form_valid(self, form):
+        title_input = form.cleaned_data.get('title')
         instance = form.save(commit=False)
         instance.author = Profile.objects.get(user=self.request.user)
         instance.currency = form.cleaned_data.get('currency')
         instance.category = form.cleaned_data.get('category')
         instance.save()
+        messages.success(self.request, f'{title_input} foi criado com sucesso!')
         return super(ExpenseCreateView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        self.form_class    
+        return super(ExpenseCreateView, self).form_invalid(form)    
     
     def get_success_url(self):
         return reverse('expense:list')
