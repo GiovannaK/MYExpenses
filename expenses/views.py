@@ -62,5 +62,5 @@ class ExpenseCreateView(CreateView):
         return super(ExpenseCreateView, self).form_invalid(form)    
     
     def get_success_url(self):
-        return reverse('expense:list')
+        return reverse('expense:create')
     
