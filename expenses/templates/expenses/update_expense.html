@@ -3,34 +3,51 @@
     
 {% block content %} 
     
-    <main class="main-update" style="background-image: url('{% static 'assets/img/bg-add.jpg' %}')">
+    <main class="main-update" style="background-image: url('{% static 'assets/img/bg-update-exp.jpg' %}')">
         <section>
             <div class="container card-container">
                 <div class="row">
                     <div class="col s12 m10 l6 offset-m1 offset-l3">
+                        <nav class="transparent">
+                            <div class="nav-wrapper">
+                              <div class="col s12">
+                                <a href="{% url 'expense:list' %}" class="breadcrumb">Meus Gastos</a>
+                                <a href="#" class="breadcrumb">Atualizar Gasto</a>
+                              </div>
+                            </div>
+                        </nav>
                         <div class="card card-exp card-update">
                             <div class="card-content">
                                 <h1 class="title-card center">
                                     ATUALIZAR GASTO
                                 </h1>
-                                <div class="divider"></div>
                                 <div class="row">
-                                    <form action="" class="add-exp-form">
+                                    <form action="" method="POST" class="add-exp-form">
+                                        {% csrf_token %}
                                         <div class="row">
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">create</i>
-                                                <input type="text" class="validate">
+                                                {{form.title}}
                                                 <label for="title">Título</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.title.errors}}
+                                                </span>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
                                                     format_list_bulleted
                                                 </i>
-                                                <select name="">
-                                                    <option value="1">Saúde</option>
-                                                    <option value="2">Alimentação</option>
+                                                <select name="category">
+                                                    {% for category in form.category %}
+                                                    {{category}}
+                                                    {% endfor %}    
                                                 </select>
                                                 <label>Categoria</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.category.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -38,18 +55,27 @@
                                                 <i class="material-icons prefix update-icon">
                                                     attach_money
                                                 </i>
-                                                <input type="number" class="validate">
+                                                {{form.quantity}}
                                                 <label for="title">Valor</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.quantity.errors}}
+                                                </span>
                                             </div>
                                             <div class="input-field col s12 m6 l6">
                                                 <i class="material-icons prefix update-icon">
                                                     monetization_on
                                                 </i>
-                                                <select name="">
-                                                    <option value="1">Real</option>
-                                                    <option value="2">Dólar</option>
+                                                <select name="currency">
+                                                    {% for currency in form.currency%}
+                                                        {{currency}}
+                                                    {% endfor %}
                                                 </select>
                                                 <label>Moeda</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.currency.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -57,8 +83,12 @@
                                                 <i class="material-icons prefix update-icon">
                                                     description
                                                 </i>
-                                                <textarea class="materialize-textarea"></textarea>
+                                                {{form.description}}
                                                 <label for="description">Descrição</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.description.errors}}
+                                                </span>
                                             </div>
                                         </div> 
                                         <div class="row">
@@ -66,8 +96,12 @@
                                                 <i class="material-icons prefix 
                                                     update-icon">date_range
                                                 </i>
-                                                <input type="date">
+                                                {{form.date}}                      
                                                 <label for="date">Data</label>
+                                                <span class="helper-text red-text" 
+                                                data-error="wrong" data-success="right">
+                                                    {{form.date.errors}}
+                                                </span>
                                             </div>
                                         </div>  
                                         <button type="submit" class="btn btn-update">

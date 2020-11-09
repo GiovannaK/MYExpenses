@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    
     .card-container{
         margin-top: 5vh;
     }
@@ -18,8 +18,9 @@
 
     .title-card{
         font-size: 1.7rem;
-        margin-bottom: 1rem !important;
+        margin-bottom: 3rem !important;
         color: $card-font-color;
+
     }
     
     .text-card{
