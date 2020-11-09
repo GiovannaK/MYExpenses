@@ -2,12 +2,12 @@ from django.shortcuts import render
 from .models import Category, Expenses, Currencies
 from profiles.models import Profile
 from django.views.generic.base import TemplateView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.views.generic.list import ListView
 from django.contrib import messages
 from django.conf import settings
 from django.urls import reverse
-from .forms import ExpenseCreationForm
+from .forms import ExpenseCreationForm, ExpenseUpdateForm
 import os
 import json
 
@@ -64,3 +64,8 @@ class ExpenseCreateView(CreateView):
     def get_success_url(self):
         return reverse('expense:create')
     
+
+class ExpenseUpdateView(UpdateView):
+    model = Expenses
+    template_name = 'expenses/update_expense.html'
+    form_class = ExpenseUpdateForm

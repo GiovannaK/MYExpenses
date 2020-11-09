@@ -1,8 +1,6 @@
 from django.db import models
 from profiles.models import Profile
 from django.conf import settings
-import os
-import json
 
 
 class Category(models.Model):
