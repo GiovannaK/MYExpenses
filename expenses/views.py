@@ -97,8 +97,7 @@ class ExpenseDeleteView(DeleteView):
         profile = Profile.objects.get(user=self.request.user)
         queryset = Expenses.objects.filter(author=profile, pk=self.kwargs['pk'])
         return queryset
-  
-
+    
     def get_success_url(self):
         messages.success(self.request, f'{self.object.title} foi excluído com sucesso!')
         return reverse('expense:list')    
