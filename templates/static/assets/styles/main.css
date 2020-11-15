@@ -1520,16 +1520,17 @@ body.dark {
 }
 
 .main-delete-exp {
-  background-image: url("../../../assets/img/delete-exp_.jpg");
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-filter: brightness(80%);
-          filter: brightness(80%);
 }
 
 .main-delete-exp .container {
   margin-top: 5vh;
+}
+
+.main-delete-exp .card-delete {
+  background: white;
 }
 
 .main-delete-exp .title-card {
@@ -1574,6 +1575,10 @@ body.dark {
 
 .dark .container {
   margin-top: 5vh;
+}
+
+.dark .card-delete {
+  background: #464646;
 }
 
 .dark .card {

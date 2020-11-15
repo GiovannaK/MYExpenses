@@ -1,12 +1,14 @@
 .main-delete-exp{
-    background-image: url('../../../assets/img/delete-exp_.jpg');
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(80%);
     
     .container{
         margin-top: 5vh;
+    }
+
+    .card-delete{
+        background: $card-bg;
     }
 
     .title-card{
@@ -50,6 +52,10 @@
     
     .container{
         margin-top: 5vh;
+    }
+
+    .card-delete{
+        background: $card-bg-dark;
     }
 
     .card{
