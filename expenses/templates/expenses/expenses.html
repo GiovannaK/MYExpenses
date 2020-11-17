@@ -43,21 +43,25 @@
                     <h1 class="title center">Meus gastos</h1>
                     <div class="row">
                         <div class="col l12 s10 m12">
-                            <form action="">
+                            <form action="{% url 'expense:search' %}" method="GET">
                                 <div class="input-field search">
-                                    <input class="white search-input" type="text" name="" id="">
+                                    <input class="white search-input" type="text" 
+                                    name="q" value="{{request.GET.q}}" id="input-search" 
+                                    placeholder="Buscar...">
                                     <label class="label-icon" for="search">
-                                        <i class="material-icons right black-text">search</i>
+                                        <i class="material-icons right black-text">
+                                            search
+                                        </i>
                                     </label>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="row center infinite-container">
+                <div class="row center expenses-box">
                     {% include 'parciais/messages.html'%}
                     {% for expense in page_obj %}
-                    <div class="col l4 m6 s12 infinite-item">
+                    <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
                                 <a href="{% url 'expense:delete' expense.pk %}" class="modal-trigger">
@@ -140,4 +144,65 @@
             </div>
         </section>    
     </main>
+    <!-- <script>
+        const data = '{{expenses}}'
+
+        const rdata = JSON.parse(data.replace(/&quot;/g, '"'))
+
+        const input = document.querySelector('#input-search');
+        const expensesBox = document.querySelector('.expenses-box')
+        
+        let filteredArr = []
+
+        input.addEventListener('keyup', (e) => {
+            expensesBox.innerHTML = "" 
+            filteredArr = rdata.filter(obj=> obj["fields"]["title"].includes(e.target.value))
+
+            if(filteredArr.length > 0){
+                filteredArr.map(obj=>{
+                    expensesBox.innerHTML += 
+                    `
+                        <div class="row center expenses-box">
+                            <div class="col l4 m6 s12">
+                                <div class="card card-expense">
+                                    <div class="card-content">
+                                        <a href="#" class="modal-trigger">
+                                            <i class="material-icons left">
+                                                close
+                                            </i>
+                                        </a>
+                                        <p class="title-card activator">
+                                            {{expense.title}}<i class="material-icons right">
+                                            more_vert</i>
+                                        </p>
+                                        <p class="text-card">{{expense.currency}} {{expense.quantity}}</p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title title-card">
+                                            <a href="#">
+                                                <i class="material-icons left">
+                                                mode_edit
+                                                </i>
+                                            </a>
+                                            {{expense.category}}<i class="material-icons right">
+                                            close</i>
+                                        </span>
+                                        <p class="text-card">
+                                            {{expense.description}}
+                                        </p>
+                                    </div>
+                                    <div class="card-action">
+                                        <p class="text-card">{{expense.date | date:"d/m/Y"}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    `
+                })
+            }else{
+                expensesBox.innerHTML = '<b>Nenhum resultado encontrado</b>'
+            }
+        })
+
+    </script> -->
 {% endblock %}

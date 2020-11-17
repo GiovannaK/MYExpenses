@@ -5,6 +5,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.contrib import messages
+from django.db.models import Q
 from django.conf import settings
 from django.urls import reverse, reverse_lazy
 from .forms import ExpenseCreationForm, ExpenseUpdateForm
@@ -41,7 +42,29 @@ class ExpenseListView(ListView):
         context = super().get_context_data(**kwargs)
         context["expenses"] = Expenses.objects.filter(author__in=profile)
         return context
-    
+
+
+class SearchExpenses(ExpenseListView):
+    def get_queryset(self, *args, **kwargs):
+        q = self.request.GET.get('q') or self.request.session['q'] 
+        qs = super().get_queryset(*args, **kwargs)
+
+        if not q:
+            return qs
+
+        self.request.session['q'] = q
+
+        qs = qs.filter(
+            Q(title__icontains=q)|
+            Q(description__icontains=q)|
+            Q(quantity__icontains=q)|
+            Q(date__icontains=q)
+        )
+        
+        self.request.session.save()
+
+        return qs    
+
 
 class ExpenseCreateView(CreateView):
     model = Expenses

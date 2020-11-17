@@ -142,3 +142,11 @@ MESSAGE_TAGS = {
     constants.WARNING: 'msg-warning',
     constants.INFO: 'msg-info',
 }
+
+# Session in days: 60s * 60m * 24h * 1d
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
+
+# Save in each request
+SESSION_SAVE_EVERY_REQUEST = False
+
+

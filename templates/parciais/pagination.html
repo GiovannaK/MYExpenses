@@ -1,32 +1,34 @@
 {% load static %}
-<ul class="pagination">
-    {% if page_obj.has_previous%}
-    <li><a href="?page=1"><i class="material-icons indigo-text">
-        chevron_left</i></a>
-    </li>
-    {% else %}
-    <li><a href="#" class="disabled"></a><i class="material-icons indigo-text">
-        chevron_left</i></a>
-    </li>
-    {% endif %}
-    {% for i in page_obj.paginator.page_range %}
-    {% if page_obj.number == i %}
-    <li class="active blue darken-4"><a href="#!" 
-        class="white-text">{{i}}</a>
-    </li>
-    {% else %}
-    <li class="waves-effect"><a href="?page={{i}}" 
-        class="indigo-text">{{i}}</a>
-    </li>
-    {% endif %}
-    {% endfor %}
-    {% if page_obj.has_next %}
-    <li class="waves-effect"><a href="?page={{page_obj.next_page_number}}" 
-        class="indigo-text"><i class="material-icons">chevron_right</i></a>
-    </li>
-    {% else %}
-    <li class="disabled"><a href="#!"></a><i class="material-icons indigo-text">
-        chevron_right</i></a>
-    </li>
-    {% endif %}
-</ul>
+{% if is_paginated %}
+    <ul class="pagination">
+        {% if page_obj.has_previous%}
+        <li><a href="?page=1"><i class="material-icons indigo-text">
+            chevron_left</i></a>
+        </li>
+        {% else %}
+        <li><a href="#" class="disabled"></a><i class="material-icons indigo-text">
+            chevron_left</i></a>
+        </li>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+        {% if page_obj.number == i %}
+        <li class="active blue darken-4"><a href="#!" 
+            class="white-text">{{i}}</a>
+        </li>
+        {% else %}
+        <li class="waves-effect"><a href="?page={{i}}" 
+            class="indigo-text">{{i}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <li class="waves-effect"><a href="?page={{page_obj.next_page_number}}" 
+            class="indigo-text"><i class="material-icons">chevron_right</i></a>
+        </li>
+        {% else %}
+        <li class="disabled"><a href="#!"></a><i class="material-icons indigo-text">
+            chevron_right</i></a>
+        </li>
+        {% endif %}
+    </ul>
+{% endif %}
