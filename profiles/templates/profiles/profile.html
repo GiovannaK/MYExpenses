@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}  
+{% block content %}
+    <main class="main-profile">
+        <section>
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <div class="card profile-card">
+                            <div class="row">
+                                <div class="col s12 m4 l4">
+                                    <div class="card-image profile-img">
+                                        <a href="#">
+                                            <img src="{{user.image.url}}">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col s12 m8 l8">
+                                    <h1 class="title-card center">{{user.user.username}}</h1>
+                                    <p class="text-card center">
+                                        {{user.bio}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col m12 s12 l6">
+                        <div class="card profile-card">
+                            <div class="card-content">
+                                <h2 class="title-card center">
+                                    <i class="material-icons">account_box</i>
+                                    Alterar informações pessoais
+                                </h2>
+                                <div class="divider"></div>
+                                <a href="#" class="text-card">
+                                    <i class="material-icons left">
+                                        https
+                                    </i>Alterar senha
+                                </a>
+                                <div class="divider"></div>
+                                <a href="#" class="text-card">
+                                    <i class="material-icons left">
+                                        person
+                                    </i>Alterar usuário, e-mail...
+                                </a>
+                                <div class="divider"></div>
+                                <p class="text-card">
+                                    <i class="material-icons">mood</i>
+                                    Alterar foto de perfil e descrição
+                                </p> 
+                                <form action="" class="form-profile">
+                                    <div class="file-field input-field">
+                                        <div class="btn secondary-btn">
+                                            <span>Arquivo</span>   
+                                            <input type="file">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input type="text" 
+                                            class="file-path validate">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 m12 l12">
+                                            <label class="text-card">
+                                                    Descrição
+                                            </label>
+                                            <div class="input-field">
+                                                <textarea id="textarea1" 
+                                                class="materialize-textarea">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" 
+                                    class="btn btn-send">Enviar</button>
+                                </form>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m12 s12 l6">
+                        <div class="card profile-card">
+                            <div class="card-content">
+                                <h2 class="title-card center">
+                                    <i class="material-icons">settings</i>
+                                    Definir minhas preferências
+                                </h2>     
+                                <div class="divider"></div> 
+                                <p class="text-card">
+                                    <i class="material-icons">format_paint</i>
+                                    Modo escuro
+                                </p>
+                                <div class="switch">
+                                    <label>
+                                        off
+                                        <input type="checkbox" class="checkbox">
+                                        <span class="lever"></span>
+                                        on
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn">
+                    <a href="#" class="btn-floating btn-large float-btn">
+                        <i class="large material-icons">add</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Meus ganhos">
+                                <i class="material-icons">monetization_on</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de ganhos">
+                                <i class="material-icons">trending_up</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de gastos">
+                                <i class="material-icons">trending_down</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Meus gastos">
+                                <i class="material-icons">money_off</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section> 
+    </main>
+{% endblock %}
+{% block script %}
+
+{% endblock%}
+    

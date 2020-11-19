@@ -1,4 +1,4 @@
- /* //dark mode
+//dark mode
 let darkMode = localStorage.getItem('darkMode');
 	
 const checkbox = document.querySelector('.checkbox');
@@ -38,4 +38,4 @@ checkbox.addEventListener('change', () => {
         deactivateDarkMode();
     }	
     
-});   */
+});   

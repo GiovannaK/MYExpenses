@@ -10,6 +10,7 @@ admin.site.index_title = 'Bem-Vindo(a)'
 
 urlpatterns = [
     path('', include('expenses.urls')),
+    path('profile/', include('profiles.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
