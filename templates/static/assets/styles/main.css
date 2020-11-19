@@ -23,24 +23,24 @@ main {
           flex: 1 0 auto;
 }
 
-header .navbar {
+header.header-nav .navbar {
   background: linear-gradient(145deg, #343747 0%, #4db3e0 35%, #321752 100%);
 }
 
-header .sidenav {
+header.header-nav .sidenav {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-header .logo, header .sidenav-logo {
+header.header-nav .logo, header.header-nav .sidenav-logo {
   text-shadow: -3px 4px 4px rgba(4, 255, 184, 0.83);
   color: #181818;
 }
 
-header .logo {
+header.header-nav .logo {
   color: rgba(255, 255, 255, 0.7);
 }
 
-header .sidenav li a {
+header.header-nav .sidenav li a {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #181818;
@@ -48,39 +48,43 @@ header .sidenav li a {
   transition: .5s;
 }
 
-header .collapse-title {
+header.header-nav .collapse-title {
   color: #181818;
   font-size: 1.3rem;
   text-transform: uppercase;
 }
 
-header .sidenav li a:hover {
+header.header-nav .sidenav li a:hover {
   display: block;
   background: #5599ff;
 }
 
-header .sidenav-logo {
+header.header-nav .sidenav-logo {
   font-size: 2rem;
 }
 
-header .collapsible-body {
+header.header-nav .collapsible-body {
   background: rgba(255, 255, 255, 0.7);
 }
 
-.dark .navbar {
+header.dark .navbar {
   background: linear-gradient(145deg, #7d54ac 0%, #533699 35%, #5b3493 100%);
 }
 
-.dark .sidenav {
+header.dark .sidenav {
   background-color: rgba(43, 43, 43, 0.7) !important;
 }
 
-.dark .logo, .dark .sidenav-logo {
+header.dark .logo, header.dark .sidenav-logo {
   text-shadow: -3px 4px 4px rgba(4, 255, 184, 0.83);
   color: white;
 }
 
-.dark .sidenav li a {
+header.dark .logo {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+header.dark .sidenav li a {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: white;
@@ -88,22 +92,22 @@ header .collapsible-body {
   transition: .5s;
 }
 
-.dark .collapse-title {
+header.dark .collapse-title {
   color: white;
   font-size: 1.3rem;
   text-transform: uppercase;
 }
 
-.dark .sidenav li a:hover {
+header.dark .sidenav li a:hover {
   display: block;
   background: black;
 }
 
-.dark .sidenav-logo {
+header.dark .sidenav-logo {
   font-size: 2rem;
 }
 
-.dark .collapsible-body {
+header.dark .collapsible-body {
   background: rgba(43, 43, 43, 0.7) !important;
 }
 

@@ -1,6 +1,6 @@
 @import '../utils/variables';
 
-header{
+header.header-nav{
     .navbar{
         background: $bg-nav-footer;
     }
@@ -46,7 +46,7 @@ header{
     }
 }
 
-.dark{
+header.dark{
     .navbar{
         background: $bg-nav-footer-dark;
     }
@@ -59,6 +59,10 @@ header{
         text-shadow: $text-shadow-logo;
         color: $sidenav-color-dark;
     }    
+
+    .logo{
+        color: $sidenav-bg;
+    }
     
     .sidenav li a{
         font-size: 1.2rem;

@@ -22,11 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // parallax
     const parallax = document.querySelectorAll('.parallax');
     M.Parallax.init(parallax, {});
-    
-      //modal
-
-    const modals = document.querySelector('.modal');
-    M.Modal.init(modals, {});
   
 	// slide
 
@@ -35,37 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		height: 600,
 		indicators: false,
 	}); 
-
 	//tooltips
-
 	const tooltips = document.querySelectorAll('.tooltipped');
 	M.Tooltip.init(tooltips, {});
-
 	//scrollspy
-
 	const scrollspy = document.querySelectorAll('.scrollspy');
-	M.ScrollSpy.init(scrollspy, {});
-
-	
+    M.ScrollSpy.init(scrollspy, {});
+  
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
