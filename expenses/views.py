@@ -36,12 +36,12 @@ class ExpenseListView(ListView):
     model = Expenses
     template_name = 'expenses/expenses.html'
     paginate_by = 6
-    
-    def get_context_data(self, **kwargs):
+    context_object_name = 'expenses'
+
+    def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)
-        context = super().get_context_data(**kwargs)
-        context["expenses"] = Expenses.objects.filter(author__in=profile)
-        return context
+        return Expenses.objects.filter(author__in=profile)
+    
 
 
 class SearchExpenses(ExpenseListView):
@@ -63,7 +63,7 @@ class SearchExpenses(ExpenseListView):
         
         self.request.session.save()
 
-        return qs    
+        return qs   
 
 
 class ExpenseCreateView(CreateView):
