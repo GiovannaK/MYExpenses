@@ -11,14 +11,14 @@
                                 <div class="col s12 m4 l4">
                                     <div class="card-image profile-img">
                                         <a href="#">
-                                            <img src="{{user.image.url}}">
+                                            <img src="{{profile.image.url}}">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col s12 m8 l8">
-                                    <h1 class="title-card center">{{user.user.username}}</h1>
+                                    <h1 class="title-card center">{{profile.user.username}}</h1>
                                     <p class="text-card center">
-                                        {{user.bio}}
+                                        {{profile.bio}}
                                     </p>
                                 </div>
                             </div>
@@ -27,6 +27,7 @@
                 </div> 
                 <div class="row">
                     <div class="col m12 s12 l6">
+                        {% include 'parciais/messages.html'%}
                         <div class="card profile-card">
                             <div class="card-content">
                                 <h2 class="title-card center">
@@ -50,11 +51,13 @@
                                     <i class="material-icons">mood</i>
                                     Alterar foto de perfil e descrição
                                 </p> 
-                                <form action="" class="form-profile">
+                                <form action="" method="POST" enctype="multipart/form-data" 
+                                class="form-profile">
+                                    {% csrf_token %}
                                     <div class="file-field input-field">
                                         <div class="btn secondary-btn">
-                                            <span>Arquivo</span>   
-                                            <input type="file">
+                                            <span>Arquivo</span>  
+                                            {{form.image}} 
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input type="text" 
@@ -63,19 +66,20 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12 m12 l12">
+                                            <br>
+                                            <br>
                                             <label class="text-card">
                                                     Descrição
                                             </label>
                                             <div class="input-field">
-                                                <textarea id="textarea1" 
-                                                class="materialize-textarea">
-                                                </textarea>
+                                                {{form.bio}}
                                             </div>
                                         </div>
                                     </div>
                                     <button type="submit" 
                                     class="btn btn-send">Enviar</button>
-                                </form>    
+                                    {{form.errors}}
+                                </form>
                             </div>
                         </div>
                     </div>
