@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import ProfileForm
+from .forms import ProfileForm, UpdateUserInfo
 from .models import Profile
 
 
@@ -32,4 +32,19 @@ class ProfileView(UpdateView):
         return reverse_lazy('profile:profile', kwargs={'pk': profile_id})
 
 
+""" class ProfileUpdateInfoView(UpdateView):
+    model = User
+    template_name = 'profiles/update_user_info.html'    
+    form_class = UpdateUserInfo
+    
+    def form_valid(self, form):
+       instance = form.save(commit=False)
+       instance.user = self.request.user
+       instance.save()
+       messages.success(self.request, 'Alterações salvas com sucesso!')
+       return super(ProfileUpdateInfoView, self).form_valid(form)        
+
+    def get_success_url(self):
+        profile_id = self.kwargs['pk']
+        return reverse_lazy('profile:profile', kwargs={'pk': profile_id})     """
     
