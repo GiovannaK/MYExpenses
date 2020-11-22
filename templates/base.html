@@ -21,15 +21,18 @@
                         <a href="#" data-target="mobile-demo" 
                         class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down up-menu">
+                            {% if not request.user.is_authenticated%}
                             <li><a href="{% url 'accounts:signup' %}"><i class="material-icons left">
                                 people_outline</i>Registre-se</a>
                             </li>
                             <li>
                                 <a href="{% url 'accounts:signin'%}"><i class="material-icons left white-text">person_add</i>Login</a>
                             </li>
+                            {% else %}
                             <li>
                                 <a href="{% url 'accounts:logout' %}"><i class="material-icons left white-text">directions_walk</i>Sair</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -45,6 +48,7 @@
                     </div>
                     <a href="{% url 'profile:profile' user.pk %}"><img class="circle" src="{{user.profile.image.url}}"></a>
                     <a href="{% url 'profile:profile' user.pk %}""><span class="white-text name">{{user.username}}</span></a>
+                    <br>
                 </div>    
             </li>
             {% endif %}

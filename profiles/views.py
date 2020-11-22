@@ -33,7 +33,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
 
 
-""" class ProfileUpdateInfoView(UpdateView):
+class ProfileUpdateInfoView(UpdateView):
     model = User
     template_name = 'profiles/update_user_info.html'    
     form_class = UpdateUserInfo
@@ -46,6 +46,5 @@ class ProfileView(LoginRequiredMixin, UpdateView):
        return super(ProfileUpdateInfoView, self).form_valid(form)        
 
     def get_success_url(self):
-        profile_id = self.kwargs['pk']
-        return reverse_lazy('profile:profile', kwargs={'pk': profile_id})     """
+        return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
     

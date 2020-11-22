@@ -10,7 +10,6 @@
                             <h1 class="title-card center">
                                 Alterar Informações Pessoais
                             </h1>
-                            <div class="divider"></div>
                             <form action=""  method="POST" class="update-info-form">
                                 {% csrf_token %}
                                 <div class="row">
@@ -21,8 +20,7 @@
                                                     mail
                                                 </i>
                                                 <label for="icon_email">Alterar E-mail</label>
-                                                <input type="text" class="validate" 
-                                                id="icon_email"> 
+                                                {{form.email}}
                                                 <span class="helper-text red-text" 
                                                 data-error="wrong" data-success="right">
                                                 </span>           
@@ -40,8 +38,7 @@
                                                 <label for="icon_user">
                                                     Alterar nome de usuário
                                                 </label>
-                                                <input type="text" class="validate" 
-                                                id="icon_user">            
+                                                {{form.username}}
                                             </div>
                                         </div>
                                     </div>
