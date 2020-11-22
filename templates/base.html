@@ -37,17 +37,19 @@
         </div>
         
         <ul class="sidenav collapsible" id="mobile-demo">
+            {% if request.user.is_authenticated %}
             <li>
                 <div class="user-view">
                     <div class="background center bg-img-sidenav">
                         <img src="{% static 'assets/img/bg-sidenav.jpg' %}">
                     </div>
-                    <a href="#user"><img class="circle" src="{% static 'assets/img/bg-register.jpg' %}"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                    <a href="{% url 'profile:profile' user.pk %}"><img class="circle" src="{{user.profile.image.url}}"></a>
+                    <a href="{% url 'profile:profile' user.pk %}""><span class="white-text name">{{user.username}}</span></a>
                 </div>    
             </li>
+            {% endif %}
             <h2 class="sidenav-logo center">MYExpenses</h2>
+            {% if request.user.is_authenticated %}
             <div class="divider"></div>
             <li>
                 <div class="collapsible-header">
@@ -87,6 +89,7 @@
                         Gastos</a>
                 </div>
             </li>
+            {% endif %}
             <li>
                 <div class="divider"></div>
                 <div class="collapsible-header">
@@ -96,6 +99,7 @@
                         </i>Usuário
                     </p>
                 </div>
+                {% if not request.user.is_authenticated %}
                 <div class="collapsible-body center">
                     <a href="{% url 'accounts:signin' %}"><i class="material-icons center sidenav-icon">
                         person_add </i> Login</a>     
@@ -104,14 +108,16 @@
                     <a href="{% url 'accounts:signup' %}"><i class="material-icons center sidenav-icon">
                         people </i> Criar conta</a>        
                 </div>
+                {% else %}
                 <div class="collapsible-body center">
                     <a href="{% url 'accounts:logout' %}"><i class="material-icons center sidenav-icon">
                         directions_walk </i> Sair</a>    
                 </div>
                 <div class="collapsible-body center">
-                    <a href="#"><i class="material-icons center sidenav-icon">
+                    <a href="{% url 'profile:profile' user.pk  %}"><i class="material-icons center sidenav-icon">
                         person </i> Perfil</a>     
                 </div>
+                {% endif %}
             </li>
         </ul>   
     </header>      

@@ -10,14 +10,14 @@
                         <img src="{% static 'assets/img/exp.png' %}">
                         <div class="caption center-align">
                             <h3 class="title-slides">Gerencie seus gastos</h3>
-                            <a href="#" class="btn-large btn-register">Cadastre-se</a>
+                            <a href="{% url 'accounts:signup'%}" class="btn-large btn-register">Cadastre-se</a>
                         </div>
                     </li>
                     <li>
                         <img src="{% static 'assets/img/dash_earn.png' %}">
                         <div class="caption center-align">
                             <h3 class="title-slides">Visualize seu progresso</h3>
-                            <a href="#" class="btn-large btn-login">Faça Login</a>
+                            <a href="{% url 'accounts:signin'%}" class="btn-large btn-login">Faça Login</a>
                         </div>
                     </li>
                 </ul>
