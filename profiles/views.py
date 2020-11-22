@@ -7,13 +7,15 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import ProfileForm, UpdateUserInfo
 from .models import Profile
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class ProfileView(UpdateView):
+
+class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'profiles/profile.html'
     model = Profile
     form_class = ProfileForm
-    
+    login_url = 'accounts:signin'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -9,6 +9,7 @@ from django.db.models import Q
 from django.conf import settings
 from django.urls import reverse, reverse_lazy
 from .forms import ExpenseCreationForm, ExpenseUpdateForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 import os
 import json
 
@@ -32,17 +33,17 @@ class HomeTemplateView(TemplateView):
         return context 
 
 
-class ExpenseListView(ListView):
+class ExpenseListView(LoginRequiredMixin, ListView):
     model = Expenses
     template_name = 'expenses/expenses.html'
     paginate_by = 6
     context_object_name = 'expenses'
+    login_url = 'accounts:signin'
 
     def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)
         return Expenses.objects.filter(author__in=profile)
     
-
 
 class SearchExpenses(ExpenseListView):
     def get_queryset(self, *args, **kwargs):
@@ -66,10 +67,11 @@ class SearchExpenses(ExpenseListView):
         return qs   
 
 
-class ExpenseCreateView(CreateView):
+class ExpenseCreateView(LoginRequiredMixin, CreateView):
     model = Expenses
     template_name = 'expenses/add_expense.html'
     form_class = ExpenseCreationForm
+    login_url = 'accounts:signin'
     
     def form_valid(self, form):
         title_input = form.cleaned_data.get('title')
@@ -89,10 +91,11 @@ class ExpenseCreateView(CreateView):
         return reverse('expense:create')
     
 
-class ExpenseUpdateView(UpdateView):
+class ExpenseUpdateView(LoginRequiredMixin, UpdateView):
     model = Expenses
     template_name = 'expenses/update_expense.html'
     form_class = ExpenseUpdateForm
+    login_url = 'accounts:signin'
 
     def form_valid(self, form):
         title_input = form.cleaned_data.get('title')
@@ -112,10 +115,11 @@ class ExpenseUpdateView(UpdateView):
         return reverse('expense:list')
 
 
-class ExpenseDeleteView(DeleteView):
+class ExpenseDeleteView(LoginRequiredMixin, DeleteView):
     model = Expenses    
     success_url = reverse_lazy('expense:list')
     template_name = 'expenses/delete_expense.html'
+    login_url = 'accounts:signin'
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)
