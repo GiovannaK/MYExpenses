@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from django.views.generic import View, CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib import messages

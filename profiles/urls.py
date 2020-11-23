@@ -5,5 +5,5 @@ app_name = 'profile'
 
 urlpatterns = [
     path('profile/<str:pk>/', ProfileView.as_view(), name='profile'),
-    path('update_info/<str:pk>/', ProfileUpdateInfoView.as_view(), name='update_info')
+    path('update_info/<str:pk>/', ProfileUpdateInfoView.as_view(), name='update_info'),
 ]

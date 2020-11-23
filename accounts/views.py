@@ -14,7 +14,7 @@ class SignUpView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Conta criada com sucesso! Faça login para continuar')
-        return reverse_lazy('accounts:signin')
+        return reverse_lazy('signin')
 
 
 class loginUserView(LoginView):

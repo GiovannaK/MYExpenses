@@ -13,7 +13,7 @@
                                     Login
                                 </h1>
                                 <div class="row">
-                                    <form action="{% url 'accounts:signin' %}"  method="POST"  class="col s12 form-register">
+                                    <form action="{% url 'signin' %}"  method="POST"  class="col s12 form-register">
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col s12 m12 l12">
@@ -35,7 +35,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <a href="#"  class="forgot-pass-text">
+                                        <a href="{% url 'password_reset' %}"  class="forgot-pass-text">
                                             Esqueceu a senha?
                                         </a>
                                         <div class="center">
