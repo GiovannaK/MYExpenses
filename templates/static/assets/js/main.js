@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	//scrollspy
 	const scrollspy = document.querySelectorAll('.scrollspy');
     M.ScrollSpy.init(scrollspy, {});
+
+
+    // selected currency
+
+    let obj = document.querySelector('select[name=currency]')
+    for(i=0; i < obj.options.length; i++){
+        if(obj.options[i].value == 18){
+            obj.selectedIndex = i;
+        }
+    }
   
 });
 
