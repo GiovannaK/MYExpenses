@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Ganho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="#" class="brand-logo logo center">MYExpenses</a>
+                        <a href="#" data-target="mobile-demo" 
+                        class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down up-menu">
+                            <li><a href="#"><i class="material-icons left">
+                                people_outline</i>Registre-se</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="material-icons left white-text">person_add</i>Login</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="material-icons left white-text">directions_walk</i>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <ul class="sidenav collapsible" id="mobile-demo">
+            <li>
+                <div class="user-view">
+                    <div class="background center bg-img-sidenav">
+                        <img src="assets/img/bg-sidenav.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="assets/img/bg-register.jpg"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>    
+            </li>
+            <h2 class="sidenav-logo center">MYExpenses</h2>
+            <div class="divider"></div>
+            <li>
+                <div class="collapsible-header">
+                    <p class="collapse-title">
+                        <i class="material-icons left">
+                            keyboard_arrow_down
+                        </i>
+                        Gerenciar
+                    </p>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">monetization_on</i>
+                        Meus ganhos</a>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">money_off</i>
+                        Meus gastos</a>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+                <div class="collapsible-header">
+                    <p class="collapse-title">
+                        <i class="material-icons left">
+                            keyboard_arrow_down
+                        </i>
+                        Gráficos
+                    </p>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">trending_up</i>
+                        Ganhos</a>
+                    
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">trending_down</i>
+                        Gastos</a>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+                <div class="collapsible-header">
+                    <p class="collapse-title">
+                        <i class="material-icons left">
+                            keyboard_arrow_down
+                        </i>Usuário
+                    </p>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">
+                        person_add</i>Login</a>     
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">
+                        people</i>Criar conta</a>        
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">
+                        directions_walk</i>Sair</a>    
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">
+                        settings</i>Configurações</a>     
+                </div>
+            </li>
+        </ul>   
+    </header>        
+    
+    <main class="main-add-earn">
+        <section>
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m10 l6 offset-m1 offset-l3">
+                        <div class="card card-exp">
+                            <div class="card-content">
+                                <h1 class="title-card center">
+                                    ADICIONAR GANHO
+                                </h1>
+                                <div class="divider"></div>
+                                <div class="row">
+                                    <form action="" class="add-exp-form">
+                                        <div class="row">
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">create</i>
+                                                <input type="text" class="validate">
+                                                <label for="title">Título</label>
+                                            </div>
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    format_list_bulleted
+                                                </i>
+                                                <select name="">
+                                                    <option value="1">Salário</option>
+                                                    <option value="2">Empreendimentos</option>
+                                                    <option value="3">Investimentos</option>
+                                                    <option value="4">Freelance</option>
+                                                </select>
+                                                <label>Categoria</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    attach_money
+                                                </i>
+                                                <input type="number" class="validate">
+                                                <label for="title">Valor</label>
+                                            </div>
+                                            <div class="input-field col s12 m6 l6">
+                                                <i class="material-icons prefix update-icon">
+                                                    monetization_on
+                                                </i>
+                                                <select name="">
+                                                    <option value="1">Real</option>
+                                                    <option value="2">Dólar</option>
+                                                </select>
+                                                <label>Moeda</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 l12 m12">
+                                                <i class="material-icons prefix update-icon">
+                                                    description
+                                                </i>
+                                                <textarea class="materialize-textarea"></textarea>
+                                                <label for="description">Descrição</label>
+                                            </div>
+                                        </div> 
+                                        <div class="row">
+                                            <div class="input-field col s12 l12 m12">
+                                                <i class="material-icons prefix 
+                                                    update-icon">date_range
+                                                </i>
+                                                <input type="date">
+                                                <label for="date">Data</label>
+                                            </div>
+                                        </div>  
+                                        <button type="submit" class="btn btn-add">Adicionar</button>                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn">
+                    <a href="#" class="btn-floating btn-large float-btn">
+                        <i class="large material-icons">add</i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            blue tooltipped" data-position="left" 
+                            data-tooltip="Perfil">
+                                <i class="material-icons">person</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Meus ganhos">
+                                <i class="material-icons">monetization_on</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            green tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de ganhos">
+                                <i class="material-icons">trending_up</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Gráfico de gastos">
+                                <i class="material-icons">trending_down</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-floating 
+                            red tooltipped" data-position="left" 
+                            data-tooltip="Meus gastos">
+                                <i class="material-icons">money_off</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>                  
+    </main>
+
+    <footer class="page-footer main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l12 s12 m12">
+                    <h5 class="footer-title center logo">MYExpenses</h5>
+                    <p class="footer-text center">
+                        Gerencie de maneira eficiente seus ganhos e gastos
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a href="#" class="footer-text">Copyright &copy; 2020 - MYExpenses</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

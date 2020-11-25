@@ -15,7 +15,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'profiles/profile.html'
     model = Profile
     form_class = ProfileForm
-    login_url = 'accounts:signin'
+    login_url = 'signin'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -33,10 +33,11 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
 
 
-class ProfileUpdateInfoView(UpdateView):
+class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'profiles/update_user_info.html'    
     form_class = UpdateUserInfo
+    login_url = 'signin'
     
     def form_valid(self, form):
        instance = form.save(commit=False)

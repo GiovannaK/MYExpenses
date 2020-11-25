@@ -1,22 +1,22 @@
-{% extends 'base.html' %}     
-{% load static %}
-{% block content %}     
+{% extends 'base.html' %}
+{% load static %}    
+{% block content %}
     <main class="main-content">
         <section class="center">
             <div class="container card-container">
                 <div class="row">
                     <div class="col s12 l4 m4">
                         <div class="card card-expense 
-                            animate__animated animate__backInRight">
+                            animate__animated animate__backInLeft">
                             <div class="card-content">
                                 <p class="title-card">Este mês</p>
-                                <p class="text-card">R$ 3600,00</p>
+                                <p class="text-card">R$ 15000,00</p>
                             </div>
                         </div>
                     </div>
                     <div class="col s12 l4 m4">
                         <div class="card card-expense 
-                        animate__animated animate__backInRight">
+                        animate__animated animate__backInLeft">
                             <div class="card-content">
                                 <p class="title-card">Há 3 meses</p>
                                 <p class="text-card">R$ 5000,00</p>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col s12 l4 m4">
                         <div class="card card-expense 
-                        animate__animated animate__backInRight">
+                        animate__animated animate__backInLeft">
                             <div class="card-content">
                                 <p class="title-card">Este ano</p>
                                 <p class="text-card">R$ 20.000,00</p>
@@ -35,60 +35,54 @@
                 </div>
             </div>
         </section>
-        <section class="center scrollspy" id="search">
+        <section class="center">
             <div class="container">
                 <div class="container search-container">
-                    <h1 class="title center">Meus gastos</h1>
+                    <h1 class="title center">Meus ganhos</h1>
                     <div class="row">
                         <div class="col l12 s10 m12">
-                            <form action="{% url 'expense:search' %}" method="GET">
+                            <form action="{% url 'earn:search' %}" method="GET">
                                 <div class="input-field search">
-                                    <input class="white search-input" type="text" 
-                                    name="q" value="{{request.GET.q}}" id="input-search" 
-                                    placeholder="Buscar...">
+                                    <input class="white search-input" type="text" name="q" 
+                                    value="{{request.GET.q}}"
+                                    id="input-search">
                                     <label class="label-icon" for="search">
-                                        <i class="material-icons right black-text">
-                                            search
-                                        </i>
+                                        <i class="material-icons right black-text">search</i>
                                     </label>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="row center expenses-box">
-                    {% include 'parciais/messages.html'%}
-                    {% for expense in page_obj %}
+                <div class="row center">
+                    {% include 'parciais/messages.html' %}
+                    {% for earn in page_obj %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
-                                <a href="{% url 'expense:delete' expense.pk %}" class="modal-trigger">
-                                    <i class="material-icons left">
-                                        close
-                                    </i>
+                                <a href="#" class="modal-trigger"><i class="material-icons left">
+                                    close</i>
                                 </a>
                                 <p class="title-card activator">
-                                    {{expense.title}}<i class="material-icons right">
+                                    {{earn.title}}<i class="material-icons right">
                                     more_vert</i>
                                 </p>
-                                <p class="text-card">{{expense.currency}} {{expense.quantity}}</p>
+                                <p class="text-card">{{earn.currency}} {{earn.quantity}}</p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title title-card">
-                                    <a href="{% url 'expense:update' expense.pk %}">
-                                        <i class="material-icons left">
-                                        mode_edit
-                                        </i>
+                                    <a href="#"><i class="material-icons left">
+                                        mode_edit</i>
                                     </a>
-                                    {{expense.category}}<i class="material-icons right">
+                                    {{earn.category}}<i class="material-icons right">
                                     close</i>
                                 </span>
                                 <p class="text-card">
-                                    {{expense.description}}
+                                    {{earn.description}}
                                 </p>
                             </div>
                             <div class="card-action">
-                                <p class="text-card">{{expense.date | date:"d/m/Y"}}</p>
+                                <p class="text-card">{{earn.date | date:"d/m/Y"}}</p>
                             </div>
                         </div>
                     </div>
@@ -107,9 +101,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'expense:create' %}" class="btn-floating 
+                            <a href="#" class="btn-floating 
                             float-btn-content tooltipped" data-position="left" 
-                            data-tooltip="Adicionar novo gasto">
+                            data-tooltip="Adicionar novo ganho">
                                 <i class="material-icons">create</i>
                             </a>
                         </li>
@@ -143,3 +137,4 @@
         </section>    
     </main>
 {% endblock %}
+   
