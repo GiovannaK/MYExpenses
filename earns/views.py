@@ -6,7 +6,7 @@ from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class EarnsListView(ListView, LoginRequiredMixin):
+class EarnsListView(LoginRequiredMixin, ListView):
     model = Earns
     template_name = 'earns/earnings.html'
     context_object_name = 'earns'
