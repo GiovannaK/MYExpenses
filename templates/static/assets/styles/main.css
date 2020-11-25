@@ -32,7 +32,7 @@ header.header-nav .sidenav {
 }
 
 header.header-nav .logo, header.header-nav .sidenav-logo {
-  text-shadow: -3px 4px 4px rgba(4, 255, 184, 0.83);
+  text-shadow: -3px 4px 4px rgba(4, 217, 255, 0.83);
   color: #181818;
 }
 
@@ -67,6 +67,11 @@ header.header-nav .collapsible-body {
   background: rgba(255, 255, 255, 0.7);
 }
 
+header.header-nav .bg-img-sidenav {
+  -webkit-filter: brightness(40%);
+          filter: brightness(40%);
+}
+
 header.dark .navbar {
   background: linear-gradient(145deg, #7d54ac 0%, #533699 35%, #5b3493 100%);
 }
@@ -76,7 +81,7 @@ header.dark .sidenav {
 }
 
 header.dark .logo, header.dark .sidenav-logo {
-  text-shadow: -3px 4px 4px rgba(4, 255, 184, 0.83);
+  text-shadow: -3px 4px 4px rgba(4, 217, 255, 0.83);
   color: white;
 }
 
@@ -330,7 +335,6 @@ body.dark {
 }
 
 .main-register {
-  background-image: url("../../../assets/img/bg-register.jpg");
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;

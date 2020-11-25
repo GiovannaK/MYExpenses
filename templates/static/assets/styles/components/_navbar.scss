@@ -44,6 +44,10 @@ header.header-nav{
     .collapsible-body{
         background: $sidenav-bg;
     }
+
+    .bg-img-sidenav{
+        filter: brightness(40%);
+    }
 }
 
 header.dark{
