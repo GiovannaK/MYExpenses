@@ -12,7 +12,7 @@ class ExpenseCreationForm(ModelForm):
         }
 
 
-    def clean_title(self):
+    """ def clean_title(self):
         super(ExpenseCreationForm, self).clean()
         title_cleaned = self.cleaned_data.get('title')
         
@@ -21,7 +21,7 @@ class ExpenseCreationForm(ModelForm):
         if title_bd:
             raise ValidationError('Este título já existe!')
 
-        return title_cleaned    
+        return title_cleaned    """ 
 
 
 class ExpenseUpdateForm(ModelForm):        

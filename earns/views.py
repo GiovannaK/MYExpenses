@@ -2,9 +2,12 @@ from django.shortcuts import render
 from .models import Category, Earns
 from profiles.models import Profile
 from django.db.models import Q
+from django.views.generic import CreateView
+from django.urls import reverse
+from django.contrib import messages
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from .forms import EarnsCreationForm
 
 class EarnsListView(LoginRequiredMixin, ListView):
     model = Earns
@@ -38,6 +41,31 @@ class SearchEarns(EarnsListView):
         self.request.session.save()
 
         return qs   
+
+
+class EarnsCreateView(LoginRequiredMixin, CreateView):
+    model = Earns
+    template_name = 'earns/add_earning.html'
+    form_class = EarnsCreationForm
+    login_url = 'signin'
+    
+    def form_valid(self, form):
+        title_input = form.cleaned_data.get('title')
+        instance = form.save(commit=False)
+        instance.author = Profile.objects.get(user=self.request.user)
+        instance.currency = form.cleaned_data.get('currency')
+        instance.category = form.cleaned_data.get('category')
+        instance.save()
+        messages.success(self.request, f'{title_input} foi criado com sucesso!')
+        return super(EarnsCreateView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        self.form_class    
+        return super(EarnsCreateView, self).form_invalid(form)    
+    
+    def get_success_url(self):
+        return reverse('earn:create')
+
 
 
 

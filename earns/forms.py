@@ -1,0 +1,13 @@
+from django.forms import ModelForm, DateTimeInput
+from .models import Earns
+from profiles.models import Profile
+from django.contrib.auth.models import User
+from django.forms import ValidationError
+
+class EarnsCreationForm(ModelForm):    
+    class Meta:
+        model = Earns
+        fields = ['title', 'category', 'description', 'date', 'quantity', 'currency']
+        widgets = {
+            'date': DateTimeInput(attrs={'type': 'date'})
+        }
