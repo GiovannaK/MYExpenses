@@ -50,18 +50,20 @@ class EarnsCreateView(LoginRequiredMixin, CreateView):
     login_url = 'signin'
     
     def form_valid(self, form):
+        profile = Profile.objects.get(user=self.request.user)
         title_input = form.cleaned_data.get('title')
-        instance = form.save(commit=False)
-        instance.author = Profile.objects.get(user=self.request.user)
-        instance.currency = form.cleaned_data.get('currency')
-        instance.category = form.cleaned_data.get('category')
-        instance.save()
-        messages.success(self.request, f'{title_input} foi criado com sucesso!')
-        return super(EarnsCreateView, self).form_valid(form)
-
-    def form_invalid(self, form):
-        self.form_class    
-        return super(EarnsCreateView, self).form_invalid(form)    
+        title_exists = Earns.objects.filter(author=profile, title=title_input).count()
+        if title_exists == 0:
+            instance = form.save(commit=False)
+            instance.author = profile
+            instance.currency = form.cleaned_data.get('currency')
+            instance.category = form.cleaned_data.get('category')
+            instance.save()
+            messages.success(self.request, f'{title_input} foi criado com sucesso!')
+            return super(EarnsCreateView, self).form_valid(form)
+        else:
+            messages.error(self.request, 'Este título já existe!')
+            return self.form_invalid(form)
     
     def get_success_url(self):
         return reverse('earn:create')
