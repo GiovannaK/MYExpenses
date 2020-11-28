@@ -11,3 +11,12 @@ class EarnsCreationForm(ModelForm):
         widgets = {
             'date': DateTimeInput(attrs={'type': 'date'})
         }
+
+
+class EarnsUpdateForm(ModelForm):
+    class Meta:
+        model = Earns
+        fields = ['category', 'title', 'description', 'date', 'quantity', 'currency']
+        widgets = {
+            'date': DateTimeInput(attrs={'type': 'date'})
+        }

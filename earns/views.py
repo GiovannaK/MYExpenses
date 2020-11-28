@@ -2,12 +2,12 @@ from django.shortcuts import render
 from .models import Category, Earns
 from profiles.models import Profile
 from django.db.models import Q
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import EarnsCreationForm
+from .forms import EarnsCreationForm, EarnsUpdateForm
 
 
 class EarnsListView(LoginRequiredMixin, ListView):
@@ -70,6 +70,25 @@ class EarnsCreateView(LoginRequiredMixin, CreateView):
         return reverse('earn:create')
 
 
+class EarnsUpdateView(LoginRequiredMixin, UpdateView):
+    model = Earns
+    template_name = 'earns/update_earning.html'
+    form_class = EarnsUpdateForm
+    login_url = 'signin'
 
+    def form_valid(self, form):
+        title_input = form.cleaned_data.get('title')
+        instance = form.save(commit=False)
+        instance.author = Profile.objects.get(user=self.request.user)
+        instance.currency = form.cleaned_data.get('currency')
+        instance.category = form.cleaned_data.get('category')
+        instance.save()
+        messages.success(self.request, f'{title_input} foi atualizado com sucesso!')
+        return super(EarnsUpdateView, self).form_valid(form)
 
+    def form_invalid(self, form):
+        self.form_class    
+        return super(EarnsUpdateView, self).form_invalid(form)    
 
+    def get_success_url(self):
+        return reverse('earn:list')
