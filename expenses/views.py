@@ -123,7 +123,6 @@ class ExpenseUpdateView(LoginRequiredMixin, UpdateView):
 
 class ExpenseDeleteView(LoginRequiredMixin, DeleteView):
     model = Expenses    
-    success_url = reverse_lazy('expense:list')
     template_name = 'expenses/delete_expense.html'
     login_url = 'signin'
 
@@ -133,7 +132,7 @@ class ExpenseDeleteView(LoginRequiredMixin, DeleteView):
         return queryset
     
     def get_success_url(self):
-        messages.success(self.request, f'{self.object.title} foi excluído com sucesso!')
+        messages.success(self.request, f'"{self.object.title}" foi excluído com sucesso!')
         return reverse('expense:list')    
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Category, Earns
 from profiles.models import Profile
 from django.db.models import Q
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic.list import ListView
@@ -91,4 +91,20 @@ class EarnsUpdateView(LoginRequiredMixin, UpdateView):
         return super(EarnsUpdateView, self).form_invalid(form)    
 
     def get_success_url(self):
+        return reverse('earn:list')
+
+
+class EarnDeleteView(LoginRequiredMixin, DeleteView):
+    model = Earns
+    template_name = 'earns/delete_earn.html'
+    login_url = 'signin'
+
+
+    def get_queryset(self):
+        profile = Profile.objects.get(user=self.request.user)    
+        queryset = Earns.objects.filter(author=profile, pk=self.kwargs['pk'])
+        return queryset
+    
+    def get_success_url(self):
+        messages.success(self.request, f'"{self.object.title}" foi excluído com sucesso!')
         return reverse('earn:list')
