@@ -3,39 +3,6 @@
 {% block content %}
     <main class="main-content">
         <section class="center">
-            <div class="container card-container">
-                <div class="row">
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                            animate__animated animate__backInLeft">
-                            <div class="card-content">
-                                <p class="title-card">Este mês</p>
-                                <p class="text-card">R$ 15000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                        animate__animated animate__backInLeft">
-                            <div class="card-content">
-                                <p class="title-card">Há 3 meses</p>
-                                <p class="text-card">R$ 5000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                        animate__animated animate__backInLeft">
-                            <div class="card-content">
-                                <p class="title-card">Este ano</p>
-                                <p class="text-card">R$ 20.000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="center">
             <div class="container">
                 <div class="container search-container">
                     <h1 class="title center">Meus ganhos</h1>
@@ -60,29 +27,51 @@
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
-                                <a href="{% url 'earn:delete' earn.pk %}"><i class="material-icons left">
-                                    close</i>
+                                <a href="{% url 'earn:delete' earn.pk %}">
+                                    <i class="material-icons left">
+                                        close
+                                    </i>
                                 </a>
                                 <p class="title-card activator">
-                                    {{earn.title}}<i class="material-icons right">
-                                    more_vert</i>
+                                    {{earn.title | truncatechars:17 }}
+                                    <i class="material-icons right">
+                                        more_vert
+                                    </i>
                                 </p>
                                 <p class="text-card">{{earn.currency}} {{earn.quantity}}</p>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title title-card">
-                                    <a href="{% url 'earn:update' earn.pk %}"><i class="material-icons left">
-                                        mode_edit</i>
+                                    <a href="{% url 'earn:update' earn.pk %}">
+                                        <i class="material-icons left">
+                                        mode_edit
+                                    </i>
                                     </a>
-                                    {{earn.category}}<i class="material-icons right">
-                                    close</i>
+                                    {{earn.category}}
+                                    <i class="material-icons right">
+                                        close
+                                    </i>
                                 </span>
                                 <p class="text-card">
                                     {{earn.description}}
                                 </p>
                             </div>
                             <div class="card-action">
-                                <p class="text-card">{{earn.date | date:"d/m/Y"}}</p>
+                                {% if not earn.long_term %}
+                                <p class="text-card">
+                                    {{earn.date | date:"d/m/Y"}}
+                                </p>
+                                {% else %}
+                                <p class="text-card">
+                                    {{earn.date | date:"d/m"}}
+                                    <a href="#" class="tooltipped" 
+                                        data-position="bottom" data-tooltip="Ganho mensal">
+                                        <i class="material-icons green-text">
+                                            date_range
+                                        </i>
+                                    </a>
+                                </p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

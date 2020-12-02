@@ -14,12 +14,12 @@ class EarnsListView(LoginRequiredMixin, ListView):
     model = Earns
     template_name = 'earns/earnings.html'
     context_object_name = 'earns'
-    paginate_by = 6
+    paginate_by = 9
     login_url = 'signin'
 
     def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)
-        return Earns.objects.filter(author__in=profile)
+        return Earns.objects.filter(author__in=profile) 
     
 
 class SearchEarns(EarnsListView):
@@ -98,7 +98,6 @@ class EarnDeleteView(LoginRequiredMixin, DeleteView):
     model = Earns
     template_name = 'earns/delete_earn.html'
     login_url = 'signin'
-
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)    

@@ -10,7 +10,6 @@ from .models import Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-
 class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'profiles/profile.html'
     model = Profile
@@ -46,7 +45,6 @@ class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
        messages.success(self.request, 'Alterações salvas com sucesso!')
        return super(ProfileUpdateInfoView, self).form_valid(form)        
 
-    
     def get_success_url(self):
         return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
     

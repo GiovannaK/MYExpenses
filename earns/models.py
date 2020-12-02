@@ -22,12 +22,13 @@ class Earns(models.Model):
     description = models.CharField(max_length=800, verbose_name="Descrição")
     quantity = models.DecimalField(max_digits=19, decimal_places=2, verbose_name="Valor")
     date = models.DateField(verbose_name="Data")
+    long_term = models.BooleanField(default=False, verbose_name="Ganho fixo")
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-date'] 
+        ordering = ['-long_term'] 
         verbose_name = 'Ganho'
         verbose_name_plural = 'Ganhos'   
 

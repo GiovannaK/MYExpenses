@@ -7,7 +7,7 @@ from django.forms import ValidationError
 class EarnsCreationForm(ModelForm):    
     class Meta:
         model = Earns
-        fields = ['title', 'category', 'description', 'date', 'quantity', 'currency']
+        fields = ['title', 'category', 'description', 'date', 'quantity', 'currency', 'long_term']
         widgets = {
             'date': DateTimeInput(attrs={'type': 'date'})
         }
@@ -16,7 +16,7 @@ class EarnsCreationForm(ModelForm):
 class EarnsUpdateForm(ModelForm):
     class Meta:
         model = Earns
-        fields = ['category', 'title', 'description', 'date', 'quantity', 'currency']
+        fields = ['category', 'title', 'description', 'date', 'quantity', 'currency', 'long_term']
         widgets = {
             'date': DateTimeInput(attrs={'type': 'date'})
         }
