@@ -12,6 +12,18 @@
         letter-spacing: 2px;
         color: $title-color;
     }
+
+    .card-filter{
+        padding: 1rem;
+    }
+
+    .title-filter{
+        margin-bottom: 1rem;
+    }
+
+    .filter-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
     
     .search-input{
         padding-left: 4rem !important;
@@ -64,12 +76,12 @@
             background-color: $float-btn-content-bg-color-hover;
         }
     }
-    
-    .modal{
-        background-color: white;
-    
-        @include delete-btn;
+
+    .btn-filter{
+        @include primary-btn;
+        background: $btn-bg
     }
+    
 }
 
 .dark{
@@ -77,6 +89,17 @@
         margin-top: 5vh;
     }
     
+    .card-filter{
+        padding: 1rem;
+    }
+
+    .title-filter{
+        margin-bottom: 1rem;
+    }
+
+    .filter-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
    
     .search-input{
         padding-left: 4rem !important;
@@ -129,6 +152,11 @@
     
     }
     
+    .btn-filter{
+        @include primary-btn;
+        background: $btn-bg-dark
+    }
+    
     .float-btn-content{
         background-color: $float-btn-content-bg-color;
     
@@ -137,11 +165,6 @@
         }
     }
     
-    .modal{
-        background-color: $card-bg-dark;
-    
-        @include delete-btn;
-    }
 }
 
 

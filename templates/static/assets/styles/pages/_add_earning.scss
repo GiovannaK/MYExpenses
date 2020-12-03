@@ -26,6 +26,10 @@
         color: $card-font-color;
     }
 
+    .add-exp-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
+
     .update-icon{
         color: $register-input-focus;
     }
@@ -59,6 +63,10 @@
     .text-card{
         font-size: 1.5rem;
         color: $card-font-color-dark;
+    }
+
+    .add-exp-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
     }
 
     .update-icon{
