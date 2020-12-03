@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import EarnsCreationForm, EarnsUpdateForm
+from .filters import EarningFilter
 
 
 class EarnsListView(LoginRequiredMixin, ListView):
