@@ -20,7 +20,9 @@ class EarnsListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)
-        return Earns.objects.filter(author__in=profile) 
+        qs = Earns.objects.filter(author__in=profile)
+        filtered_earns = EarningFilter(self.request.GET, queryset=qs)
+        return filtered_earns.qs
     
 
 class SearchEarns(EarnsListView):

@@ -508,6 +508,7 @@ body.dark {
 
 .main-login .form-register label {
   color: #181818;
+  font-size: 1.2rem;
 }
 
 .main-login .form-register input:focus {

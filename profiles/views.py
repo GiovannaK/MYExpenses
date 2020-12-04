@@ -44,6 +44,11 @@ class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
        instance.save()
        messages.success(self.request, 'Alterações salvas com sucesso!')
        return super(ProfileUpdateInfoView, self).form_valid(form)        
+    
+    def form_invalid(self, form):
+        self.form_class    
+        messages.error(self.request, 'Usuário ou e-mail já existem')
+        return super(ProfileUpdateInfoView, self).form_invalid(form)    
 
     def get_success_url(self):
         return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
