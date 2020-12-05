@@ -104,6 +104,14 @@
                                                 </span>
                                             </div>
                                         </div>  
+                                        <label class="col s2 l3 m3">
+                                            {{form.long_term}}
+                                            <span class="black-text">Gasto Mensal</span>
+                                        </label> 
+                                        <span class="helper-text red-text" 
+                                            data-error="wrong" data-success="right">
+                                            {{form.long_term.errors}}
+                                        </span>
                                         <button type="submit" class="btn btn-update">
                                             Atualizar
                                         </button>                    

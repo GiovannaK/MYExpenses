@@ -24,7 +24,18 @@
     .filter-form ul.dropdown-content.select-dropdown li span{
         color: $register-input-focus;
     }
+
+    .filter-form input{
+        &:focus{
+            border-color: $register-input-focus;        
+        }
+    }
     
+    .btn-filter{
+        @include primary-btn;
+        background: $btn-bg
+    }
+
     .search-input{
         padding-left: 4rem !important;
     
@@ -77,11 +88,6 @@
         }
     }
 
-    .btn-filter{
-        @include primary-btn;
-        background: $btn-bg
-    }
-    
 }
 
 .dark{

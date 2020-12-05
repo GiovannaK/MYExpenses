@@ -1,8 +1,9 @@
 {% load static %}
+{% load filter_args %}
 {% if is_paginated %}
     <ul class="pagination">
         {% if page_obj.has_previous%}
-        <li><a href="?page=1"><i class="material-icons indigo-text">
+        <li><a href="?{% url_replace 'page' page_obj.previous_page_number request.GET.urlencode %}"><i class="material-icons indigo-text">
             chevron_left</i></a>
         </li>
         {% else %}
@@ -10,19 +11,19 @@
             chevron_left</i></a>
         </li>
         {% endif %}
-        {% for i in page_obj.paginator.page_range %}
-        {% if page_obj.number == i %}
-        <li class="active blue darken-4"><a href="#!" 
-            class="white-text">{{i}}</a>
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <li class="active blue darken-4"><a href="?{% url_replace 'page' num request.GET.urlencode %}" 
+            class="white-text">{{num}}</a>
         </li>
         {% else %}
-        <li class="waves-effect"><a href="?page={{i}}" 
-            class="indigo-text">{{i}}</a>
+        <li class="waves-effect"><a href="?{% url_replace 'page' num request.GET.urlencode %}" 
+            class="indigo-text">{{num}}</a>
         </li>
         {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
-        <li class="waves-effect"><a href="?page={{page_obj.next_page_number}}" 
+        <li class="waves-effect"><a href="?{% url_replace 'page' page_obj.next_page_number request.GET.urlencode %}" 
             class="indigo-text"><i class="material-icons">chevron_right</i></a>
         </li>
         {% else %}

@@ -36,12 +36,13 @@ class Expenses(models.Model):
     quantity = models.DecimalField(max_digits=19, decimal_places=2, 
     verbose_name="Valor")
     date = models.DateField(verbose_name="Data")
+    long_term = models.BooleanField(default=False, verbose_name="Gasto fixo")
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-date']
+        ordering = ['-long_term']
         verbose_name = 'Gasto'
         verbose_name_plural = 'Gastos'
 

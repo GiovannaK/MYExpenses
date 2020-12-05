@@ -5,32 +5,42 @@
         <section class="center">
             <div class="container card-container">
                 <div class="row">
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                            animate__animated animate__backInRight">
-                            <div class="card-content">
-                                <p class="title-card">Este mês</p>
-                                <p class="text-card">R$ 3600,00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                        animate__animated animate__backInRight">
-                            <div class="card-content">
-                                <p class="title-card">Há 3 meses</p>
-                                <p class="text-card">R$ 5000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 l4 m4">
-                        <div class="card card-expense 
-                        animate__animated animate__backInRight">
-                            <div class="card-content">
-                                <p class="title-card">Este ano</p>
-                                <p class="text-card">R$ 20.000,00</p>
-                            </div>
-                        </div>
+                    <div class="col s12 m10 l10 offset-l1 offset-m1">
+                        <div class="card card-filter">
+                            <div class="card-body">
+                                <p class="text-card title-filter">
+                                    <i class="material-icons">
+                                        filter_list
+                                    </i>
+                                    Filtrar por
+                                </p>
+                                <div class="row">
+                                    <div class="col l12 m12 s12">
+                                        <form action="" method="GET" class="filter-form">
+                                            <div class="input-field col s12 m6 l3">
+                                                {{filter.form.category}}
+                                                <label>Categoria</label>
+                                            </div>  
+                                            <div class="input-field col s12 m6 l3">
+                                                {{filter.form.currency}}
+                                                <label>Moeda</label>
+                                            </div> 
+                                            <div class="input-field col s12 m6 l3">
+                                                {{filter.form.long_term}}
+                                                <label>Mensal</label>
+                                            </div>  
+                                            <div class="input-field col s12 m6 l3">
+                                                {{filter.form.date}}
+                                                <label>Data</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-filter">
+                                                Filtrar
+                                            </button>
+                                        </form>
+                                    </div>    
+                                </div>
+                            </div>        
+                        </div>        
                     </div>
                 </div>
             </div>
@@ -58,7 +68,7 @@
                 </div>
                 <div class="row center expenses-box">
                     {% include 'parciais/messages.html'%}
-                    {% for expense in page_obj %}
+                    {% for expense in object_list %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">
@@ -88,7 +98,21 @@
                                 </p>
                             </div>
                             <div class="card-action">
-                                <p class="text-card">{{expense.date | date:"d/m/Y"}}</p>
+                                {% if not expense.long_term %}
+                                <p class="text-card">
+                                    {{expense.date | date:"d/m/Y"}}
+                                </p>
+                                {% else %}
+                                <p class="text-card">
+                                    {{expense.date | date:"d/m"}}
+                                    <a href="#" class="tooltipped" 
+                                        data-position="bottom" data-tooltip="Gasto mensal">
+                                        <i class="material-icons green-text">
+                                            date_range
+                                        </i>
+                                    </a>
+                                </p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

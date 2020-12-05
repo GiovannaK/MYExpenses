@@ -9,21 +9,21 @@ from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import EarnsCreationForm, EarnsUpdateForm
 from .filters import EarningFilter
+from django_filters.views import FilterView
 
 
-class EarnsListView(LoginRequiredMixin, ListView):
+class EarnsListView(LoginRequiredMixin, FilterView):
     model = Earns
     template_name = 'earns/earnings.html'
     context_object_name = 'earns'
-    paginate_by = 9
+    paginate_by = 6
     login_url = 'signin'
+    filterset_class = EarningFilter
 
     def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)
-        qs = Earns.objects.filter(author__in=profile)
-        filtered_earns = EarningFilter(self.request.GET, queryset=qs)
-        return filtered_earns.qs
-    
+        return Earns.objects.filter(author__in=profile)
+
 
 class SearchEarns(EarnsListView):
     def get_queryset(self, *args, **kwargs):

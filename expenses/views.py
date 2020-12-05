@@ -9,7 +9,9 @@ from django.db.models import Q
 from django.conf import settings
 from django.urls import reverse, reverse_lazy
 from .forms import ExpenseCreationForm, ExpenseUpdateForm
+from django_filters.views import FilterView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .filters import ExpenseFilter
 import os
 import json
 
@@ -33,12 +35,13 @@ class HomeTemplateView(TemplateView):
         return context 
 
 
-class ExpenseListView(LoginRequiredMixin, ListView):
+class ExpenseListView(LoginRequiredMixin, FilterView):
     model = Expenses
     template_name = 'expenses/expenses.html'
-    paginate_by = 6
+    paginate_by = 2
     context_object_name = 'expenses'
     login_url = 'signin'
+    filterset_class = ExpenseFilter
 
     def get_queryset(self):
         profile = Profile.objects.filter(user=self.request.user)

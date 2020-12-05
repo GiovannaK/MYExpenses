@@ -18,31 +18,19 @@
                                     <div class="col l12 m12 s12">
                                         <form action="" method="GET" class="filter-form">
                                             <div class="input-field col s12 m6 l3">
-                                                <select name="category_filter">
-                                                    {{filtered_earns.qs}}        
-                                                </select>
+                                                {{filter.form.category}}
                                                 <label>Categoria</label>
                                             </div>  
                                             <div class="input-field col s12 m6 l3">
-                                                <select name="currency_filter">
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                </select>
+                                                {{filter.form.currency}}
                                                 <label>Moeda</label>
                                             </div> 
                                             <div class="input-field col s12 m6 l3">
-                                                <select name="long_term_filter">
-                                                    <option value="1">Sim</option>
-                                                    <option value="2">Não</option>
-                                                </select>
+                                                {{filter.form.long_term}}
                                                 <label>Mensal</label>
                                             </div>  
                                             <div class="input-field col s12 m6 l3">
-                                                <select name="date_filter">
-                                                    <option value="1">Crescente</option>
-                                                    <option value="2">Decrescente</option>
-                                                </select>
+                                                {{filter.form.date}}
                                                 <label>Data</label>
                                             </div>
                                             <button type="submit" class="btn btn-filter">
@@ -78,7 +66,7 @@
                 </div>
                 <div class="row center">
                     {% include 'parciais/messages.html' %}
-                    {% for earn in page_obj %}
+                    {% for earn in object_list %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
                             <div class="card-content">

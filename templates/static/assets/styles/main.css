@@ -197,6 +197,21 @@ body.dark {
   color: #008cff !important;
 }
 
+.main-content .filter-form input:focus {
+  border-color: #008cff !important;
+}
+
+.main-content .btn-filter {
+  width: 100%;
+  background: #00a2ff;
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.main-content .btn-filter:hover {
+  background: #007ac0;
+}
+
 .main-content .search-input {
   padding-left: 4rem !important;
 }
@@ -250,17 +265,6 @@ body.dark {
 
 .main-content .float-btn-content:hover {
   background-color: #005800;
-}
-
-.main-content .btn-filter {
-  width: 100%;
-  background: #00a2ff;
-  margin-top: 2rem;
-  background: #00a2ff;
-}
-
-.main-content .btn-filter:hover {
-  background: #007ac0;
 }
 
 .dark .search-container, .dark .card-container {
@@ -1227,6 +1231,21 @@ body.dark {
   color: #008cff !important;
 }
 
+.main-content .filter-form input:focus {
+  border-color: #008cff !important;
+}
+
+.main-content .btn-filter {
+  width: 100%;
+  background: #00a2ff;
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.main-content .btn-filter:hover {
+  background: #007ac0;
+}
+
 .main-content .search-input {
   padding-left: 4rem !important;
 }
@@ -1280,17 +1299,6 @@ body.dark {
 
 .main-content .float-btn-content:hover {
   background-color: #005800;
-}
-
-.main-content .btn-filter {
-  width: 100%;
-  background: #00a2ff;
-  margin-top: 2rem;
-  background: #00a2ff;
-}
-
-.main-content .btn-filter:hover {
-  background: #007ac0;
 }
 
 .dark .search-container, .dark .card-container {
