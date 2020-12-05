@@ -38,7 +38,7 @@ class HomeTemplateView(TemplateView):
 class ExpenseListView(LoginRequiredMixin, FilterView):
     model = Expenses
     template_name = 'expenses/expenses.html'
-    paginate_by = 2
+    paginate_by = 6
     context_object_name = 'expenses'
     login_url = 'signin'
     filterset_class = ExpenseFilter
