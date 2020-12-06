@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'profiles',
     'accounts',
     'earns',
+    'expenses_dashboard',
     'django_filters'
 ]
 

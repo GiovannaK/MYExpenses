@@ -13,6 +13,7 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('accounts/', include('accounts.urls')),
     path('earns/', include('earns.urls')),
+    path('expenses_dashboard/', include('expenses_dashboard.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
