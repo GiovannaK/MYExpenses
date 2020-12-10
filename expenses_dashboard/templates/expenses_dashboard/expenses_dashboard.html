@@ -1,16 +1,14 @@
 {% extends 'base.html' %}   
-{% load static %}    
+{% load static %}  
+
+
+
 {% block content %}
     <main class="main-exp-dash">
-        <div class="parallax-container">
-            <div class="parallax">
-                <img src="{% static 'assets/img/bg-exp-dash.jpg' %}">        
-            </div>
-        </div> 
         <section>
             <div class="container card-container">
                 <h1 class="title center animate__animated animate__bounceInLeft">
-                    Gráficos de gastos
+                    Gráficos de gastos   
                 </h1>
                 <div class="row animate__animated animate__bounceInLeft">
                     <div class="col s12 m12 l12">
@@ -79,12 +77,48 @@
                 </div>  
                 {% include 'parciais/float_menu.html'%}
             </div>
-            <div class="parallax-container">
-                <div class="parallax">
-                    <img src="{% static 'assets/img/bg-exp-dash.jpg' %}">        
-                </div>
-            </div> 
         </section>    
     </main>
 {% endblock %}
+
+{% block scripts %}
+    <script>
+        // expenses per category
+        let category = document.querySelector('#category').getContext('2d');
+
+        let expensesPerCategoryDashboard = new Chart(category, {
+            type: 'doughnut',
+            data: {
+                labels: [{% for cat in categories %}"{{cat.name}}", {% endfor %}],
+
+                datasets: [{
+                    label: 'Gastos por categoria',
+                    data:[
+                        3000, 2700, 5000, 6000,           
+                    ],
+                
+                    backgroundColor: [
+                        'rgba(0, 132, 255, 0.637)',
+                        'rgba(255, 153, 0, 0.61)',
+                        'rgba(255, 0, 0, 0.507)',
+                        'rgba(64, 236, 64, 0.534)',
+                        'rgba(156, 32, 213, 1)',
+                        'rgba(11, 59, 203, 1)',
+                        'rgba(11, 203, 181, 1)'
+                    ]
+
+                }],
+            },
+            options: {
+                title:{
+                    display: true,
+                    text: 'Gastos por categoria no mês atual',
+                    fontSize: 20
+                },
+                maintainAspectRatio: false,
+            }
+        });
+
+    </script>    
+{% endblock scripts %}
     

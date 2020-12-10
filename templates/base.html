@@ -47,7 +47,8 @@
                         <img src="{% static 'assets/img/bg-sidenav.jpg' %}">
                     </div>
                     <a href="{% url 'profile:profile' user.pk %}"><img class="circle" src="{{user.profile.image.url}}"></a>
-                    <a href="{% url 'profile:profile' user.pk %}""><span class="white-text name">{{user.username}}</span></a>
+                    <a href="{% url 'profile:profile' user.pk %}"><span class="white-text name">{{user.username}}</span></a>
+                    <a href="{% url 'profile:profile' user.pk %}"><span class="white-text name">{{user.email}}</span></a>
                     <br>
                 </div>    
             </li>
@@ -89,7 +90,7 @@
                     
                 </div>
                 <div class="collapsible-body center">
-                    <a href="#"><i class="material-icons center sidenav-icon">trending_down</i>
+                    <a href="{% url 'expense_dash:expenses_dash'%}"><i class="material-icons center sidenav-icon">trending_down</i>
                         Gastos</a>
                 </div>
             </li>
@@ -114,18 +115,18 @@
                 </div>
                 {% else %}
                 <div class="collapsible-body center">
-                    <a href="{% url 'logout' %}"><i class="material-icons center sidenav-icon">
-                        directions_walk </i> Sair</a>    
-                </div>
-                <div class="collapsible-body center">
                     <a href="{% url 'profile:profile' user.pk  %}"><i class="material-icons center sidenav-icon">
                         person </i> Perfil</a>     
+                </div>
+                <div class="collapsible-body center">
+                    <a href="{% url 'logout' %}"><i class="material-icons center sidenav-icon">
+                        directions_walk </i> Sair</a>    
                 </div>
                 {% endif %}
             </li>
         </ul>   
-    </header>      
-    
+    </header>  
+
     {% block content %}
         
     {% endblock %}
@@ -151,6 +152,10 @@
     <script src="{% static 'assets/js/darkmode.js' %}"></script> 
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="{% static 'assets/js/expensesDashboards.js' %}"></script> 
+    <script src="{% static 'assets/js/expensesDashboards.js' %}"></script>
+
+    {% block scripts %}
+
+    {% endblock scripts %}
 </body>
 </html>

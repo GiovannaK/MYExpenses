@@ -72,41 +72,6 @@ let currentMonthExpenseChart = new Chart(currentMonthDash, {
     }
 });
 
-// expenses per category
-
-let category = document.querySelector('#category').getContext('2d');
-
-let expensesPerCategoryDashboard = new Chart(category, {
-    type: 'doughnut',
-    data: {
-        labels: [
-            'Alimentação', 'Saúde', 'Educação', 'Serviços de assinatura'
-        ],
-        
-        datasets: [{
-            label: 'Gastos por categoria',
-            data:[
-                3000, 2700, 5000, 6000,           
-            ],
-
-            backgroundColor: [
-                'rgba(0, 132, 255, 0.637)',
-                'rgba(255, 153, 0, 0.61)',
-                'rgba(255, 0, 0, 0.507)',
-                'rgba(64, 236, 64, 0.534)'
-            ]
-            
-        }],
-    },
-    options: {
-        title:{
-            display: true,
-            text: 'Gastos por categoria no mês atual',
-            fontSize: 20
-        },
-        maintainAspectRatio: false,
-    }
-});
 
 // expenses in the last 5 years
 
