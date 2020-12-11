@@ -37,40 +37,7 @@ let yearExpenseChart = new Chart(yearDash, {
     }
 });
 
-// current month dashboard
 
-let currentMonthDash = document.querySelector('#currentMonthDash').getContext('2d')
-
-let currentMonthExpenseChart = new Chart(currentMonthDash, {
-    type: 'bar',
-    data: {
-        labels: [
-            'Primeira semana', 'Segunda semana', 'Terceira semana', 'Quarta semana'
-        ],
-        
-        datasets: [{
-            label: 'Gastos no mês atual',
-            data:[
-                3000, 2700, 5000, 6000,           
-            ],
-
-            backgroundColor: [
-                'rgba(0, 132, 255, 0.637)',
-                'rgba(255, 153, 0, 0.61)',
-                'rgba(255, 0, 0, 0.507)',
-                'rgba(64, 236, 64, 0.534)'
-            ]
-        }],
-    },
-    options: {
-        title:{
-            display: true,
-            text: 'Gastos da primeira a quarta semana do mês atual',
-            fontSize: 20
-        },
-        maintainAspectRatio: false,
-    }
-});
 
 
 // expenses in the last 5 years
