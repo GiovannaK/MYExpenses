@@ -1,6 +1,6 @@
 // charts js -> current year dashboard
 
-let yearDash = document.querySelector('#yearDash').getContext('2d');
+
 
 
 // global settings
@@ -8,34 +8,7 @@ let yearDash = document.querySelector('#yearDash').getContext('2d');
 Chart.defaults.global.defaultFontFamily = 'Verdana';
 //Chart.defaults.global.defaultFontSize = 18;
 
-let yearExpenseChart = new Chart(yearDash, {
-    type: 'line',
-    data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 
-        'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'dezembro'
-        ],
-        
-        datasets: [{
-            label: 'Gastos',
-            data:[
-                3000, 2000, 5000, 6000, 5000, 7000, 1000, 4000, 2300, 
-                10000, 5600, 13500            
-            ],
 
-            borderColor: 'rgba(255, 0, 0, 0.507)',
-            fill: false,
-            lineTension: 0,
-        }],
-    },
-    options: {
-        title:{
-            display: true,
-            text: 'Gastos no perído de janeiro a dezembro do ano atual',
-            fontSize: 20
-        },
-        maintainAspectRatio: false,
-    }
-});
 
 
 

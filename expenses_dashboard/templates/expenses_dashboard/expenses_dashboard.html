@@ -1,12 +1,14 @@
 {% extends 'base.html' %}   
 {% load static %}  
-
+{% load formatted_month %}
+{% load l10n %}
 {% block content %}
     <main class="main-exp-dash">
         <section>
             <div class="container card-container">
                 <h1 class="title center animate__animated animate__bounceInLeft">
-                    Gráficos de gastos   
+                    Gráficos de gastos  
+                    
                 </h1>
                 <div class="row animate__animated animate__bounceInLeft">
                     <div class="col s12 m12 l12">
@@ -130,9 +132,7 @@
 
                 datasets: [{
                     label: 'Gastos no mês atual',
-                    data:[
-                        3000, 2700, 5000, 6000,           
-                    ],
+                    data:[{% for week in expenses_per_week %}{{week.sum | unlocalize}}, {% endfor %}],
                 
                     backgroundColor: [
                         'rgba(0, 132, 255, 0.637)',
@@ -146,6 +146,31 @@
                 title:{
                     display: true,
                     text: 'Gastos da primeira a quarta semana do mês atual',
+                    fontSize: 20
+                },
+                maintainAspectRatio: false,
+            }
+        });
+
+        //current year    
+            let yearDash = document.querySelector('#yearDash').getContext('2d');
+        
+            let yearExpenseChart = new Chart(yearDash, {
+            type: 'line',
+            data: {
+                labels: [{% for expense in expenses_each_month %}"{{expense.month | month_name}}", {% endfor %}],
+                datasets: [{
+                    label: 'Gastos',
+                    data:[{% for expense in expenses_each_month %}{{expense.sum | unlocalize}}, {% endfor %}],
+                    borderColor: 'rgba(255, 0, 0, 0.507)',
+                    fill: false,
+                    lineTension: 0,
+                }],
+            },
+            options: {
+                title:{
+                    display: true,
+                    text: 'Gastos no perído de janeiro a dezembro do ano atual',
                     fontSize: 20
                 },
                 maintainAspectRatio: false,
