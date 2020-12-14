@@ -8,7 +8,6 @@
             <div class="container card-container">
                 <h1 class="title center animate__animated animate__bounceInLeft">
                     Gráficos de gastos  
-                    
                 </h1>
                 <div class="row animate__animated animate__bounceInLeft">
                     <div class="col s12 m12 l12">
@@ -94,7 +93,7 @@
                 datasets: [{
                     label: 'Gastos por categoria',
                     data:[
-                        3000, 2700, 5000, 6000,           
+                    {% for expense in expenses_by_category %}{{expense.sum | unlocalize}}, {% endfor %}       
                     ],
                 
                     backgroundColor: [
@@ -112,7 +111,7 @@
             options: {
                 title:{
                     display: true,
-                    text: 'Gastos por categoria no mês atual',
+                    text: 'Gastos por categoria até o ano atual',
                     fontSize: 20
                 },
                 maintainAspectRatio: false,
@@ -171,6 +170,42 @@
                 title:{
                     display: true,
                     text: 'Gastos no perído de janeiro a dezembro do ano atual',
+                    fontSize: 20
+                },
+                maintainAspectRatio: false,
+            }
+        });
+
+        //last five years
+        let lastFiveMonths = document.querySelector('#lastFiveMonths').getContext('2d');
+
+        let expenseslastFiveMonthsDashboard = new Chart(lastFiveMonths, {
+            type: 'bar',
+            data: {
+                labels: [
+                    {% for expense in expenses_last_five_years %}"{{expense.year}}", {% endfor %}
+                ],
+
+                datasets: [{
+                    label: 'Gastos por ano',
+                    data:[
+                        {% for expense in expenses_last_five_years %}{{expense.sum | unlocalize}}, {% endfor %}       
+                    ],
+                
+                    backgroundColor: [
+                        'rgba(255, 153, 0, 0.61)',
+                        'rgba(255, 0, 0, 0.507)',
+                        'rgba(64, 236, 64, 0.534)', 
+                        'rgba(0, 132, 255, 0.637)',
+                        'green',
+                        'purple'
+                    ] 
+                }],
+            },
+            options: {
+                title:{
+                    display: true,
+                    text: 'Total de gastos por ano nos últimos cinco anos',
                     fontSize: 20
                 },
                 maintainAspectRatio: false,
