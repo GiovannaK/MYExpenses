@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load formatted_month %}
+{% load l10n %}
+{% block content %}    
+    <main class="main-earn-dash">
+        <section>
+            <div class="container card-container">
+                <h1 class="title center animate__animated animate__bounceInLeft">
+                    Gráficos de ganhos
+                </h1>
+                <div class="row animate__animated animate__bounceInLeft">
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col s12 m12 l12">
+                                        <ul class="tabs dash-tabs">
+                                            <li class="tab col s6 m6 l6">
+                                                <a href="#dash1">Este ano</a>
+                                            </li>
+                                            <li class="tab col s6 m6 l6">
+                                                <a href="#dash2">Mês atual</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col s12 m12 l12" id="dash1">
+                                        <div class="chart-container">
+                                            <canvas id="earningsCurrentYear" 
+                                                height="450">
+                                            </canvas>
+                                        </div>
+                                    </div>
+                                    <div class="col s12 m12 l12" id="dash2">
+                                        <div class="chart-container">
+                                            <canvas id="earningsCurrentMonth" 
+                                                height="450">
+                                            </canvas>
+                                        </div>    
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row animate__animated animate__bounceInRight 
+                animate__delay-2s">
+                    <div class="col s12 m12 l12">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col s12 m12 l12">
+                                        <ul class="tabs dash-tabs">
+                                            <li class="tab col s6 m6 l6">
+                                                <a href="#dash3">Por categoria</a>
+                                            </li>
+                                            <li class="tab col s6 m6 l6">
+                                                <a href="#dash4">últimos 5 anos</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col s12 m12 l12" id="dash3">
+                                        <div class="chart-container">
+                                            <canvas id="earningsCategory" 
+                                                height="450">
+                                            </canvas>
+                                        </div> 
+                                    </div>
+                                    <div class="col s12 m12 l12" id="dash4">
+                                        <div class="chart-container">
+                                            <canvas id="earningsLastFiveMonths" 
+                                                height="450">
+                                            </canvas>
+                                        </div> 
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% include 'parciais/float_menu.html'%}
+        </section>    
+    </main>
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+        // earnings in the current year
+    let earningsCurrentYear = document.querySelector('#earningsCurrentYear').getContext('2d');
+
+    let earningsCurrentYearDashboard = new Chart(earningsCurrentYear, {
+        type: 'line',
+        data: {
+            labels: [
+                {% for earnings in earnings_per_month %}"{{earnings.month | month_name}}", {% endfor %}
+            ],
+
+            datasets: [{
+                label: 'Ganhos',
+                data:[
+                    {% for earnings in earnings_per_month %}{{earnings.sum | unlocalize}}, {% endfor %}
+                ],
+
+                borderColor: 'rgba(64, 236, 64, 1)',
+                fill: false,
+                lineTension: 0,
+            }],
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Ganhos no perído de janeiro a dezembro do ano atual',
+                fontSize: 20
+            },
+            maintainAspectRatio: false,
+        }
+    });
+
+    // earnings in the current month
+
+    let earningsCurrentMonth = document.querySelector('#earningsCurrentMonth').getContext('2d');
+
+    let earningsCurrentMonthDashboard = new Chart(earningsCurrentMonth, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Primeira semana', 'Segunda semana', 'Terceira semana', 'Quarta semana'
+            ],
+
+            datasets: [{
+                label: 'Ganhos no mês atual',
+                data:[
+                    {% for earnings in earnings_per_week %}{{earnings.sum | unlocalize}}, {% endfor %}           
+                ],
+
+                backgroundColor: [
+                    'rgba(255, 153, 0, 0.61)',
+                    'rgba(0, 132, 255, 0.637)',
+                    'rgba(64, 236, 64, 0.534)',
+                    'rgba(255, 0, 0, 0.507)',
+
+                ]
+            }],
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Ganhos da primeira a quarta semana do mês atual',
+                fontSize: 20
+            },
+            maintainAspectRatio: false,
+        }
+    });
+
+    //earnings per category
+
+    let earningsCategory = document.querySelector('#earningsCategory').getContext('2d');
+
+    let earningsCategoryDashboard = new Chart(earningsCategory, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                {% for category in categories %}"{{category.name}}", {% endfor %}
+            ],
+
+            datasets: [{
+                label: 'Ganhos por categoria',
+                data:[
+                    {% for earnings in earnings_per_category %}{{earnings.sum | unlocalize}}, {% endfor %}
+                ],
+
+                backgroundColor: [
+                    'rgba(0, 132, 255, 0.637)',
+                    'rgba(255, 153, 0, 0.61)',
+                    'rgba(255, 0, 0, 0.507)',
+                    'rgba(64, 236, 64, 0.534)'
+                ]
+
+            }],
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Ganhos por categoria no mês atual',
+                fontSize: 20
+            },
+            maintainAspectRatio: false,
+        }
+    });
+
+    // earnings in the last 5 months
+
+    let earningsLastFiveMonths = document.querySelector('#earningsLastFiveMonths').getContext('2d');
+
+    let earningslastFiveMonthsDashboard = new Chart(earningsLastFiveMonths, {
+        type: 'bar',
+        data: {
+            labels: [
+                {% for earnings in earnings_last_five_years %}"{{earnings.year}}", {% endfor %}
+            ],
+
+            datasets: [{
+                label: 'Ganhos por ano',
+                data:[
+                    {% for earnings in earnings_last_five_years %}{{earnings.sum | unlocalize}}, {% endfor %}
+                ],
+
+                backgroundColor: [
+                    'rgba(255, 153, 0, 0.61)',
+                    'rgba(255, 0, 0, 0.507)',
+                    'rgba(64, 236, 64, 0.534)', 
+                    'rgba(0, 132, 255, 0.637)',
+                    'green',
+                    'purple'
+                ] 
+            }],
+        },
+        options: {
+            title:{
+                display: true,
+                text: 'Total de ganhos por ano nos últimos cinco anos',
+                fontSize: 20
+            },
+            maintainAspectRatio: false,
+        }
+    });
+</script>
+
+{% endblock scripts%}

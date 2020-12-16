@@ -1,6 +1,6 @@
 import calendar
 from django import template
-import locale
+
 
 register = template.Library()
 

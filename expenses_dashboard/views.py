@@ -20,15 +20,22 @@ class ExpensesDashboardView(ListView):
         current_year = datetime.now().year
         current_month = datetime.now().month
         five_years_ago = current_year - 5
+
+        month_start = datetime(year=current_year, month=current_month, day=1)
+        month_end = datetime(year=current_year, month=current_month, day=31)
+
         start_date = datetime(year=current_year, month=1, day=1)
         end_date = datetime(year=current_year, month=12, day=31)
 
+        initial_year = datetime(year=five_years_ago, month=1, day=1)
+        final_year = datetime(year=current_year, month=12, day=31)
+
         expenses_each_month = query.filter(date__range=[start_date, end_date]).annotate(month=ExtractMonth('date')).values('month').annotate(sum=Sum('quantity')).order_by()
-        expenses_per_week = query.filter(date__month=current_month).annotate(week=ExtractWeek('date')).values('week').annotate(sum=Sum('quantity')).order_by('week')
-        expenses_last_five_years = query.filter(date__year__gte=five_years_ago).annotate(year=ExtractYear('date')).values('year').annotate(sum=Sum('quantity')).order_by('year')      
+        expenses_per_week = query.filter(date__range=[month_start, month_end]).annotate(week=ExtractWeek('date')).values('week').annotate(sum=Sum('quantity')).order_by('week')
+        expenses_last_five_years = query.filter(date__range=[initial_year, final_year]).annotate(year=ExtractYear('date')).values('year').annotate(sum=Sum('quantity')).order_by('year')      
         expenses_by_category = query.values('category').annotate(sum=Sum('quantity')).order_by('category')
 
-        category = Category.objects.all()
+        category = Category.objects.all().order_by('id')
         context["categories"] = category
         context["expenses_each_month"] = expenses_each_month
         context["expenses_per_week"] = expenses_per_week
