@@ -5,30 +5,19 @@ from expenses.models import Expenses, Category
 from profiles.models import Profile
 from django.db.models import Sum
 from django.db.models.functions import ExtractMonth, ExtractWeek, ExtractYear
-from datetime import datetime, timedelta
+from django.contrib.auth.mixins import LoginRequiredMixin
+from earnings_dashboard.utils.custom_datetime_utils import start_date, end_date, initial_year, final_year, month_end, month_start
 
 
-class ExpensesDashboardView(ListView):
+class ExpensesDashboardView(LoginRequiredMixin, ListView):
     template_name = 'expenses_dashboard/expenses_dashboard.html'
     model = Expenses
+    login_url = 'signin'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         profile = Profile.objects.filter(user=self.request.user)
         query = Expenses.objects.filter(author__in=profile)
-
-        current_year = datetime.now().year
-        current_month = datetime.now().month
-        five_years_ago = current_year - 5
-
-        month_start = datetime(year=current_year, month=current_month, day=1)
-        month_end = datetime(year=current_year, month=current_month, day=31)
-
-        start_date = datetime(year=current_year, month=1, day=1)
-        end_date = datetime(year=current_year, month=12, day=31)
-
-        initial_year = datetime(year=five_years_ago, month=1, day=1)
-        final_year = datetime(year=current_year, month=12, day=31)
 
         expenses_each_month = query.filter(date__range=[start_date, end_date]).annotate(month=ExtractMonth('date')).values('month').annotate(sum=Sum('quantity')).order_by()
         expenses_per_week = query.filter(date__range=[month_start, month_end]).annotate(week=ExtractWeek('date')).values('week').annotate(sum=Sum('quantity')).order_by('week')

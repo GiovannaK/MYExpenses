@@ -12,6 +12,10 @@ class SignUpView(CreateView):
     model = User
     form_class = UserRegistrationForm
 
+    def form_invalid(self, form):
+        messages.error(self.request, 'Verifique se todas as informações estão corretas!')
+        return super(SignUpView, self).form_invalid(form)
+
     def get_success_url(self):
         messages.success(self.request, 'Conta criada com sucesso! Faça login para continuar')
         return reverse_lazy('signin')

@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // select form
     const select = document.querySelectorAll('select');
-    M.FormSelect.init(select, {});
+    M.FormSelect.init(select, {
+        coverTrigger: false
+    });
 
     //tabs
     const tabs = document.querySelectorAll('.tabs');
@@ -40,12 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // selected currency
 
-    let obj = document.querySelector('select[name=currency]')
-    for(i=0; i < obj.options.length; i++){
-        if(obj.options[i].value == 18){
-            obj.selectedIndex = i;
+    const selectedCurrency = () => {
+        let obj = document.querySelector('select[name=currency]')
+        for(i=0; i < obj.options.length; i++){
+            if(obj.options[i].value == 18){
+                obj.selectedIndex = i;
+            }
         }
     }
+    
+    selectedCurrency();
   
 });
 
