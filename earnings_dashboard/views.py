@@ -21,12 +21,11 @@ class EarningsDashboardView(LoginRequiredMixin, ListView):
 
         earnings_per_month = query.filter(date__range=[start_date, end_date]).annotate(month=ExtractMonth('date')).values('month').annotate(sum=Sum('quantity')).order_by()
         earnings_per_week = query.filter(date__range=[month_start, month_end]).annotate(week=ExtractWeek('date')).values('week').annotate(sum=Sum('quantity')).order_by('week')
-        earnings_per_category = query.values('category').annotate(sum=Sum('quantity')).order_by('category')
+        earnings_per_category = query.values('category__name').annotate(sum=Sum('quantity')).order_by('category')
         earnings_last_five_years = query.filter(date__range=[initial_year, final_year]).annotate(year=ExtractYear('date')).values('year').annotate(sum=Sum('quantity')).order_by('year')
         
         context["earnings_per_month"] = earnings_per_month
         context["earnings_per_week"] = earnings_per_week
-        context["categories"] = Category.objects.all().order_by('id')
         context["earnings_per_category"] = earnings_per_category
         context["earnings_last_five_years"] = earnings_last_five_years
         return context

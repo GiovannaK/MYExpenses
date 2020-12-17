@@ -22,10 +22,8 @@ class ExpensesDashboardView(LoginRequiredMixin, ListView):
         expenses_each_month = query.filter(date__range=[start_date, end_date]).annotate(month=ExtractMonth('date')).values('month').annotate(sum=Sum('quantity')).order_by()
         expenses_per_week = query.filter(date__range=[month_start, month_end]).annotate(week=ExtractWeek('date')).values('week').annotate(sum=Sum('quantity')).order_by('week')
         expenses_last_five_years = query.filter(date__range=[initial_year, final_year]).annotate(year=ExtractYear('date')).values('year').annotate(sum=Sum('quantity')).order_by('year')      
-        expenses_by_category = query.values('category').annotate(sum=Sum('quantity')).order_by('category')
+        expenses_by_category = query.values('category__name').annotate(sum=Sum('quantity')).order_by('category')
 
-        category = Category.objects.all().order_by('id')
-        context["categories"] = category
         context["expenses_each_month"] = expenses_each_month
         context["expenses_per_week"] = expenses_per_week
         context["expenses_last_five_years"] = expenses_last_five_years

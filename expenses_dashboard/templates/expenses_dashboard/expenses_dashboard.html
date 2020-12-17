@@ -91,12 +91,12 @@
         let expensesPerCategoryDashboard = new Chart(category, {
             type: 'doughnut',
             data: {
-                labels: [{% for cat in categories %}"{{cat.name}}", {% endfor %}],
+                labels: [{% for expense in expenses_by_category %}"{{expense.category__name}}", {% endfor %}],
 
                 datasets: [{
                     label: 'Gastos por categoria',
                     data:[
-                    {% for expense in expenses_by_category %}{{expense.sum | unlocalize}}, {% endfor %}       
+                        {% for expense in expenses_by_category %}{{expense.sum | unlocalize}}, {% endfor %}       
                     ],
                 
                     backgroundColor: [

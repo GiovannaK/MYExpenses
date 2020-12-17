@@ -164,7 +164,7 @@
         type: 'doughnut',
         data: {
             labels: [
-                {% for category in categories %}"{{category.name}}", {% endfor %}
+            {% for earnings in earnings_per_category %}"{{earnings.category__name}}", {% endfor %}
             ],
 
             datasets: [{
