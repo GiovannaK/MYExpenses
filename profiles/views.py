@@ -29,7 +29,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         return super(ProfileView, self).form_valid(form)    
 
     def get_success_url(self):
-        return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
+        return reverse_lazy('profile:profile', kwargs={'pk': self.request.user.profile.pk})
 
 
 class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
@@ -51,5 +51,5 @@ class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
         return super(ProfileUpdateInfoView, self).form_invalid(form)    
 
     def get_success_url(self):
-        return reverse_lazy('profile:profile', kwargs={'pk': self.kwargs['pk']})
+        return reverse_lazy('profile:profile', kwargs={'pk': self.request.user.profile.pk})
     

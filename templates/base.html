@@ -46,9 +46,9 @@
                     <div class="background center bg-img-sidenav">
                         <img src="{% static 'assets/img/bg-sidenav.jpg' %}">
                     </div>
-                    <a href="{% url 'profile:profile' user.pk %}"><img class="circle" src="{{user.profile.image.url}}"></a>
-                    <a href="{% url 'profile:profile' user.pk %}"><span class="white-text name">{{user.username}}</span></a>
-                    <a href="{% url 'profile:profile' user.pk %}"><span class="white-text name">{{user.email}}</span></a>
+                    <a href="{% url 'profile:profile' user.profile.pk %}"><img class="circle" src="{{user.profile.image.url}}"></a>
+                    <a href="{% url 'profile:profile' user.profile.pk %}"><span class="white-text name">{{user.username}}</span></a>
+                    <a href="{% url 'profile:profile' user.profile.pk %}"><span class="white-text name">{{user.email}}</span></a>
                     <br>
                 </div>    
             </li>
