@@ -8,7 +8,7 @@ class ExpenseCreationForm(ModelForm):
         model = Expenses
         fields = ['category', 'description', 'date', 'title', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'date'})
+            'date': DateTimeInput(attrs={'type': 'text', 'class': 'datepicker'})
         }
 
 

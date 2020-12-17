@@ -9,7 +9,7 @@ class EarnsCreationForm(ModelForm):
         model = Earns
         fields = ['title', 'category', 'description', 'date', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'date'})
+            'date': DateTimeInput(attrs={'type': 'text', 'class': 'datepicker'})
         }
 
 
