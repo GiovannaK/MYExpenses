@@ -28,6 +28,11 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         messages.success(self.request, 'Alterações salvas com sucesso!')
         return super(ProfileView, self).form_valid(form)    
 
+    def form_invalid(self, form):
+        self.form_class    
+        messages.error(self.request, 'Verifique se todos os campos foram preenchidos')
+        return super(ProfileView, self).form_invalid(form)        
+
     def get_success_url(self):
         return reverse_lazy('profile:profile', kwargs={'pk': self.request.user.profile.pk})
 
