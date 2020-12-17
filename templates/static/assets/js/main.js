@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // select form
     const select = document.querySelectorAll('select');
-    M.FormSelect.init(select, {
-        coverTrigger: false
-    });
+    M.FormSelect.init(select, {});
 
     //tabs
     const tabs = document.querySelectorAll('.tabs');
@@ -38,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	//scrollspy
 	const scrollspy = document.querySelectorAll('.scrollspy');
     M.ScrollSpy.init(scrollspy, {});
-
 
     // selected currency
 

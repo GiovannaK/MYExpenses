@@ -3,6 +3,27 @@
 {% block content %}     
     <main class="main-content">
         <section class="center">
+            {% if not expenses%}
+            <div class="container card-container">
+                <div class="row">
+                    <div class="col s12 m8 l6 offset-m2 offset-l3">
+                        <div class="card animate__animated animate__pulse animate__infinite">
+                            <div class="card-body card-discovery">
+                                <h1 class="title-discovery">Olá, {{request.user}}</h1>
+                                <p class="text-discovery">
+                                    Este é o MYExpenses,
+                                    comece a obter progresso ao gerenciar 
+                                    sua vida finaceira!
+                                </p>
+                                <a href="{% url 'expense:create' %}" id="discovery" class="btn btn-large btn-discovery">
+                                    Começar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
             <div class="container card-container">
                 <div class="row">
                     <div class="col s12 m10 l10 offset-l1 offset-m1">
@@ -118,11 +139,10 @@
                     </div>
                     {% endfor %}
                 </div>
-                {% include 'parciais/float_menu.html' %}                 
-                <br>
                 {% include 'parciais/pagination.html'%}
-                <br>
-            </div>
+                {% endif %}
+                {% include 'parciais/float_menu.html' %}
+                </div>
         </section>    
     </main>
 {% endblock %}
