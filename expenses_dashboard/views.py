@@ -31,3 +31,5 @@ class ExpensesDashboardView(LoginRequiredMixin, ListView):
         return context
     
 
+class ExpensesReportsTemplateView(TemplateView):
+    template_name = 'expenses_dashboard/expenses_reports.html'

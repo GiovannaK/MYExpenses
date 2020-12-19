@@ -94,6 +94,27 @@
                         Gastos</a>
                 </div>
             </li>
+            <li>
+                <div class="divider"></div>
+                <div class="collapsible-header">
+                    <p class="collapse-title">
+                        <i class="material-icons left">
+                            keyboard_arrow_down
+                        </i>
+                        Relatórios
+                    </p>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="#"><i class="material-icons center sidenav-icon">insert_chart</i>
+                        Ganhos
+                    </a>
+                </div>
+                <div class="collapsible-body center">
+                    <a href="{% url 'expense_dash:expenses_reports'%}"><i class="material-icons center sidenav-icon">pie_chart</i>
+                        Gastos
+                    </a>
+                </div>
+            </li>
             {% endif %}
             <li>
                 <div class="divider"></div>

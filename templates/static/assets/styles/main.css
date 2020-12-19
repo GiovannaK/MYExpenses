@@ -1737,4 +1737,28 @@ body.dark {
 .btn-discovery:hover {
   background-color: #4d0080;
 }
+
+.main-expenses-reports .title-card {
+  font-size: 1.7rem;
+  margin-bottom: 1rem !important;
+  color: #181818;
+}
+
+.main-expenses-reports .text-card {
+  font-size: 1.5rem;
+  color: #181818;
+}
+
+.main-expenses-reports .report-value {
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
+.main-expenses-reports .export-text {
+  padding-bottom: 1.5rem;
+}
+
+.main-expenses-reports .btn-export {
+  margin-bottom: 2rem;
+}
 /*# sourceMappingURL=main.css.map */

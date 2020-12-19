@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="main-expenses-reports">
+        <section class="center">
+            <h1 class="title-card">RELATÓRIO DE GASTOS</h1>        
+            <div class="card-container container">
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="text-card">
+                                        Total no ano atual
+                                    </p>
+                                    <p class="report-value">
+                                        <i class="medium material-icons red-text">
+                                            trending_down
+                                        </i>
+                                        4000,00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="text-card">
+                                        Total no mês atual
+                                    </p>
+                                    <p class="report-value">
+                                        <i class="medium material-icons amber-text">
+                                            trending_down
+                                        </i>
+                                        6000,00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="card horizontal">
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p class="text-card">
+                                        Total nos últimos três meses
+                                    </p>
+                                    <p class="report-value">
+                                        <i class="medium material-icons orange-text">
+                                            trending_down
+                                        </i>
+                                        10.000,00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card">Gastos por Moeda até o presente momento</p>
+                                <table class="responsive-table centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Valor Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R$</td>
+                                            <td>50000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>7000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card">Gastos por Moeda no ano atual</p>
+                                <table class="responsive-table centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Valor Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R$</td>
+                                            <td>50000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>7000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card">Gastos por Moeda no mês atual</p>
+                                <table class="responsive-table centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Valor Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R$</td>
+                                            <td>50000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>7000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card">Gastos por Moeda nos últimos três meses</p>
+                                <table class="responsive-table centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Valor Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R$</td>
+                                            <td>50000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>7000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card">Gastos por Moeda no ano passado</p>
+                                <table class="responsive-table centered">
+                                    <thead>
+                                        <tr>
+                                            <th>Moeda</th>
+                                            <th>Valor Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R$</td>
+                                            <td>50000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$</td>
+                                            <td>7000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="text-card export-text">
+                                    Exportar
+                                    <i class="material-icons">insert_drive_file</i>
+                                </p>
+                                <a href="#" class="btn btn-export red">
+                                    Exportar em formato PDF
+                                </a>
+                                <a href="#" class="btn green btn-export darken-4">
+                                    Exportar em formato xlsx
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    </main>
+{% endblock %}
