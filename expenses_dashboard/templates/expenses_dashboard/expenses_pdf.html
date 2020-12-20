@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Gastos</title>
+</head>
+<body>
+    <h1>Relatório de Gastos {{current_year}}</h1> 
+    <hr>
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h2 class="text-card">
+                            Total no ano atual
+                        </h2>
+                        <h3 class="report-value">
+                            {{total_current_year}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h2 class="text-card">
+                            Total no mês atual
+                        </h2>
+                        <h3 class="report-value">
+                            {{total_current_month}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col s12 m12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="text-card">Gastos por Moeda até o presente momento</h2>
+                    <table class="responsive-table centered">
+                        <thead>
+                            <tr>
+                                <th>Moeda</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for currency in currency_current_moment%}
+                            <tr>
+                                <td>{{currency.currency__currency}}</td>
+                                <td>{{currency.sum}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col s12 m12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="text-card">Gastos por Moeda no ano atual</h2>
+                    <table class="responsive-table centered">
+                        <thead>
+                            <tr>
+                                <th>Moeda</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for currency in currency_current_year%}
+                            <tr>
+                                <td>{{currency.currency__currency}}</td>
+                                <td>{{currency.sum}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col s12 m12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="text-card">Gastos por Moeda no mês atual</h2>
+                    <table class="responsive-table centered">
+                        <thead>
+                            <tr>
+                                <th>Moeda</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for currency in currency_current_month%}
+                            <tr>
+                                <td>{{currency.currency__currency}}</td>
+                                <td>{{currency.sum}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col s12 m12 l6">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="text-card">Gastos por Moeda no ano passado</h2>
+                    <table class="responsive-table centered">
+                        <thead>
+                            <tr>
+                                <th>Moeda</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for currency in currency_last_year%}
+                            <tr>
+                                <td>{{currency.currency__currency}}</td>
+                                <td>{{currency.sum}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

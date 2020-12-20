@@ -4,7 +4,7 @@ from earns.models import Earns, Category
 from profiles.models import Profile
 from django.db.models import Sum
 from django.db.models.functions import ExtractMonth, ExtractWeek, ExtractYear
-from .utils.custom_datetime_utils import start_date, end_date, initial_year, final_year, month_end, month_start
+from .utils.custom_datetime_utils import start_date, end_date, initial_year, final_year, month_end, month_start, initial_three_months, final_three_months
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
