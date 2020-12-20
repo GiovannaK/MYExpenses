@@ -1441,6 +1441,10 @@ body.dark {
   color: #181818;
 }
 
+.main-update .card-content-exp {
+  padding: 1.5rem 2.5rem;
+}
+
 .main-update .text-card {
   font-size: 1.5rem;
   color: #181818;
@@ -1502,6 +1506,10 @@ body.dark {
   color: #815dc2;
 }
 
+.dark .card-content-exp {
+  padding: 1.5rem 2.5rem;
+}
+
 .main-update .card-container {
   margin-top: 5vh;
 }
@@ -1526,6 +1534,10 @@ body.dark {
 
 .main-update .update-icon {
   color: #008cff !important;
+}
+
+.main-update .card-content-exp {
+  padding: 1.5rem 2.5rem;
 }
 
 .dark .card-container {
@@ -1553,6 +1565,10 @@ body.dark {
 
 .dark .update-icon {
   color: #815dc2;
+}
+
+.dark .card-content-exp {
+  padding: 1.5rem 2.5rem;
 }
 
 .main-landing-page .slider .slides img {
@@ -1702,40 +1718,6 @@ body.dark {
 
 .dark .btn-cancel:hover {
   background-color: rgba(64, 236, 64, 0.534);
-}
-
-.card-discovery {
-  margin-top: 12vh;
-  padding: 2rem;
-  -webkit-box-shadow: 7px 4px 8px 7px rgba(125, 197, 255, 0.75);
-          box-shadow: 7px 4px 8px 7px rgba(125, 197, 255, 0.75);
-}
-
-.title-discovery {
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: linear-gradient(145deg, #343747 0%, #4db3e0 35%, #321752 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-discovery {
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  padding-top: 1rem;
-}
-
-.btn-discovery {
-  margin-top: 2rem;
-  background-color: #00a2ff;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
-.btn-discovery:hover {
-  background-color: #4d0080;
 }
 
 .main-expenses-reports .title-card {

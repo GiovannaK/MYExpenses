@@ -18,7 +18,11 @@
                                         <i class="medium material-icons red-text">
                                             trending_down
                                         </i>
-                                        {{total_current_year}}
+                                        {% if total_current_year %}
+                                            {{total_current_year}}
+                                        {% else %}    
+                                            Nenhum
+                                        {% endif %}    
                                     </p>
                                 </div>
                             </div>
@@ -35,7 +39,11 @@
                                         <i class="medium material-icons amber-text">
                                             trending_down
                                         </i>
-                                        {{total_current_month}}
+                                        {% if total_current_month %}
+                                            {{total_current_month}}
+                                        {% else %}    
+                                            Nenhum
+                                        {% endif %} 
                                     </p>
                                 </div>
                             </div>
@@ -52,14 +60,24 @@
                                         <i class="medium material-icons orange-text">
                                             trending_down
                                         </i>
-                                        {{total_last_three_months}}
+                                        {% if total_last_three_months %}
+                                            {{total_last_three_months}}
+                                        {% else %}    
+                                            Nenhum
+                                        {% endif %} 
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col s12 m12 l12">
+                    <h2 class="title-card">
+                        ADICIONE GASTOS PARA VER O RELATÓRIO
+                    </h2>
+                </div>
                 <div class="row">
+                    {% if currency_current_moment%}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -83,6 +101,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if currency_current_year%}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -106,6 +126,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if currency_current_month %}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -129,6 +151,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if currency_last_three_months%}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -152,6 +176,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if currency_last_year%}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
@@ -175,6 +201,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">

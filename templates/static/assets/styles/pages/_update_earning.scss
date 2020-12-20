@@ -22,6 +22,10 @@
     .update-icon{
         color: $register-input-focus;        
     }
+
+    .card-content-exp{
+        padding: 1.5rem 2.5rem;
+    }
 }
 
 .dark{
@@ -45,5 +49,9 @@
  
     .update-icon{
          color: $register-input-focus-dark;        
+    }
+
+    .card-content-exp{
+        padding: 1.5rem 2.5rem;
     }
 }

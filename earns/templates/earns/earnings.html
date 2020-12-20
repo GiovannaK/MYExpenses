@@ -3,27 +3,6 @@
 {% block content %}
     <main class="main-content">
         <section class="center">
-            {% if not earns %}
-            <div class="container card-container">
-                <div class="row">
-                    <div class="col s12 m8 l6 offset-m2 offset-l3">
-                        <div class="card animate__animated animate__pulse animate__infinite">
-                            <div class="card-body card-discovery">
-                                <h1 class="title-discovery">Olá, {{request.user}}</h1>
-                                <p class="text-discovery">
-                                    Este é o MYExpenses,
-                                    comece a obter progresso ao gerenciar 
-                                    sua vida finaceira!
-                                </p>
-                                <a href="{% url 'earn:create' %}" id="discovery" class="btn btn-large btn-discovery">
-                                    Começar
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% else %}
             <div class="container card-container">
                 <div class="row">
                     <div class="col s12 m10 l10 offset-l1 offset-m1">
@@ -87,6 +66,7 @@
                 </div>
                 <div class="row center">
                     {% include 'parciais/messages.html' %}
+                    {% if earns %}
                     {% for earn in object_list %}
                     <div class="col l4 m6 s12">
                         <div class="card card-expense">
