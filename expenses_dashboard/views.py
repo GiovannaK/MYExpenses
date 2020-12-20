@@ -10,6 +10,7 @@ from earnings_dashboard.utils.custom_datetime_utils import start_date, end_date,
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 class ExpensesDashboardView(LoginRequiredMixin, ListView):
     template_name = 'expenses_dashboard/expenses_dashboard.html'
@@ -63,7 +64,8 @@ class ExpensesReportsListView(LoginRequiredMixin, ListView):
         context["total_last_three_months"] = total_last_three_months
         return context
 
-    
+
+@login_required(login_url="signin")    
 def expense_pdf_view(request):
     template_path = 'expenses_dashboard/expenses_pdf.html'
     response = HttpResponse(content_type='application/pdf')
