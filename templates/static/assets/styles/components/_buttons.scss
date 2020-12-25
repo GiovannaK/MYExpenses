@@ -37,3 +37,12 @@
     }
         
 }
+
+.btn-confirm{
+    margin-top: 2rem;
+    background: $btn-bg;
+
+    &:hover{
+        background: $btn-bg-hover;
+    }    
+}

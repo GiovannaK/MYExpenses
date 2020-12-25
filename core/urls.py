@@ -11,7 +11,7 @@ admin.site.index_title = 'Bem-Vindo(a)'
 urlpatterns = [
     path('', include('expenses.urls')),
     path('profile/', include('profiles.urls')),
-    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('allauth.urls')),
     path('earns/', include('earns.urls')),
     path('expenses_dashboard/', include('expenses_dashboard.urls')),
     path('earnings_dashboard/', include('earnings_dashboard.urls')),

@@ -15,7 +15,8 @@
 
     .card-login{
         box-shadow: $box-shadow-card;
-        background: $card-register-bg;    
+        background: $card-register-bg;  
+        padding: 0.5rem 2rem;  
 
         .login-btn{
             @include primary-btn;

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account %}
+
+{% block head_title %}{% trans "Confirme seu E-mail" %}{% endblock %}
+
+
+{% block content %}
+<main class="main-register">
+    <section>
+        <div class="container register-container">
+            <div class="row">
+                <div class="col s12 m8 l6 offset-m2 offset-l3">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="title-card center">Confirme seu e-mail</h3>
+                            <div class="divider"></div>
+                            {% if confirmation %}
+                        
+                            {% user_display confirmation.email_address.user as user_display %}
+                        
+                            <p class="text-card center">{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+                            
+                            <div class="center">
+                                <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                                {% csrf_token %}
+                                    <button type="submit" class="btn btn-large btn-confirm">{% trans 'Confirmar' %}</button>
+                                </form>
+                            </div>
+                        
+                            {% else %}
+                        
+                            {% url 'account_email' as email_url %}
+                        
+                            <p>{% blocktrans %}Este e-mail de confirmação expirou!<a href="{{ email_url }}">Acesse</a>.{% endblocktrans %}</p>
+                        
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

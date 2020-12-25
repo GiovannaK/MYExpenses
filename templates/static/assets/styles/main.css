@@ -23,6 +23,15 @@ main {
           flex: 1 0 auto;
 }
 
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
+}
+
 header.header-nav .navbar {
   background: linear-gradient(145deg, #343747 0%, #4db3e0 35%, #321752 100%);
 }
@@ -184,6 +193,15 @@ body.dark {
 
 .datepicker-cancel, .datepicker-done {
   color: #2797ff !important;
+}
+
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
 }
 
 .main-content .search-container, .main-content .card-container {
@@ -493,6 +511,15 @@ body.dark {
   color: black;
 }
 
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
+}
+
 .main-login {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url("../../../assets/img/bg_login.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.4)), url("../../../assets/img/bg_login.jpg");
@@ -510,6 +537,7 @@ body.dark {
   -webkit-box-shadow: 7px 4px 8px -1px rgba(0, 0, 0, 0.75);
           box-shadow: 7px 4px 8px -1px rgba(0, 0, 0, 0.75);
   background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 2rem;
 }
 
 .main-login .card-login .login-btn {
@@ -591,6 +619,15 @@ body.dark {
 .dark .text-card {
   font-size: 1.5rem;
   color: white;
+}
+
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
 }
 
 .main-profile .card-container {
@@ -751,6 +788,15 @@ body.dark {
   background-color: #00a2ff !important;
 }
 
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
+}
+
 .main-update-user .card-container {
   margin-top: 5vh;
 }
@@ -836,6 +882,15 @@ body.dark {
   background: #007ac0;
 }
 
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
+}
+
 .main-update-pass .card-container {
   margin-top: 5vh;
 }
@@ -900,6 +955,15 @@ body.dark {
 }
 
 .dark .change-pass-btn:hover {
+  background: #007ac0;
+}
+
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
   background: #007ac0;
 }
 
@@ -1234,6 +1298,15 @@ body.dark {
   height: 20vh;
 }
 
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
+}
+
 .main-content .search-container, .main-content .card-container {
   margin-top: 5vh;
 }
@@ -1508,6 +1581,15 @@ body.dark {
 
 .dark .card-content-exp {
   padding: 1.5rem 2.5rem;
+}
+
+.btn-confirm {
+  margin-top: 2rem;
+  background: #00a2ff;
+}
+
+.btn-confirm:hover {
+  background: #007ac0;
 }
 
 .main-update .card-container {

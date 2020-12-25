@@ -1,0 +1,7 @@
+{% extends "account/email/base_message.txt" %}
+{% load account %}
+{% load i18n %}
+
+{% block content %}{% autoescape off %}{% user_display user as user_display %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Você está recebendo este e-mail porque se registrou em nossa plataforma MYExpenses.
+
+Para confirmar seu e-mail vá para {{ activate_url }}{% endblocktrans %}{% endautoescape %}{% endblock %}

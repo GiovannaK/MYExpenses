@@ -22,15 +22,15 @@
                         class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down up-menu">
                             {% if not request.user.is_authenticated%}
-                            <li><a href="{% url 'signup' %}"><i class="material-icons left">
+                            <li><a href="{% url 'account_signup' %}"><i class="material-icons left">
                                 people_outline</i>Registre-se</a>
                             </li>
                             <li>
-                                <a href="{% url 'signin'%}"><i class="material-icons left white-text">person_add</i>Login</a>
+                                <a href="{% url 'account_login' %}"><i class="material-icons left white-text">person_add</i>Login</a>
                             </li>
                             {% else %}
                             <li>
-                                <a href="{% url 'logout' %}"><i class="material-icons left white-text">directions_walk</i>Sair</a>
+                                <a href="{% url 'account_logout' %}"><i class="material-icons left white-text">directions_walk</i>Sair</a>
                             </li>
                             {% endif %}
                         </ul>
@@ -127,11 +127,11 @@
                 </div>
                 {% if not request.user.is_authenticated %}
                 <div class="collapsible-body center">
-                    <a href="{% url 'signin' %}"><i class="material-icons center sidenav-icon">
+                    <a href="{% url 'account_login' %}"><i class="material-icons center sidenav-icon">
                         person_add </i> Login</a>     
                 </div>
                 <div class="collapsible-body center">
-                    <a href="{% url 'signup' %}"><i class="material-icons center sidenav-icon">
+                    <a href="{% url 'account_signup' %}"><i class="material-icons center sidenav-icon">
                         people </i> Criar conta</a>        
                 </div>
                 {% else %}
@@ -140,7 +140,7 @@
                         person </i> Perfil</a>     
                 </div>
                 <div class="collapsible-body center">
-                    <a href="{% url 'logout' %}"><i class="material-icons center sidenav-icon">
+                    <a href="{% url 'account_logout' %}"><i class="material-icons center sidenav-icon">
                         directions_walk </i> Sair</a>    
                 </div>
                 {% endif %}
