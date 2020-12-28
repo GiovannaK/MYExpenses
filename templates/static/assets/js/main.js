@@ -66,16 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // selected currency
 
-    const selectedCurrency = () => {
-        let obj = document.querySelector('select[name=currency]')
-        for(i=0; i < obj.options.length; i++){
-            if(obj.options[i].value == 18){
-                obj.selectedIndex = i;
+    let obj = document.querySelector('select[name=currency]')
+
+    if(obj){
+        const selectedCurrency = () => {
+            for(i=0; i < obj.options.length; i++){
+                if(obj.options[i].value == 18){
+                    obj.selectedIndex = i;
+                }
             }
         }
+        
+        selectedCurrency();
     }
     
-    selectedCurrency();
   
 });
 
