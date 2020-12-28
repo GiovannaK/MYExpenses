@@ -40,7 +40,7 @@ class ExpenseListView(LoginRequiredMixin, FilterView):
     template_name = 'expenses/expenses.html'
     paginate_by = 6
     context_object_name = 'expenses'
-    login_url = 'signin'
+    login_url = 'account_login'
     filterset_class = ExpenseFilter
 
     def get_queryset(self):
@@ -74,7 +74,7 @@ class ExpenseCreateView(LoginRequiredMixin, CreateView):
     model = Expenses
     template_name = 'expenses/add_expense.html'
     form_class = ExpenseCreationForm
-    login_url = 'signin'
+    login_url = 'account_login'
     
     def form_valid(self, form):
         profile = Profile.objects.get(user=self.request.user)
@@ -104,7 +104,7 @@ class ExpenseUpdateView(LoginRequiredMixin, UpdateView):
     model = Expenses
     template_name = 'expenses/update_expense.html'
     form_class = ExpenseUpdateForm
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def form_valid(self, form):
         title_input = form.cleaned_data.get('title')
@@ -127,7 +127,7 @@ class ExpenseUpdateView(LoginRequiredMixin, UpdateView):
 class ExpenseDeleteView(LoginRequiredMixin, DeleteView):
     model = Expenses    
     template_name = 'expenses/delete_expense.html'
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)

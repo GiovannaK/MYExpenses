@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import login_required
 class ExpensesDashboardView(LoginRequiredMixin, ListView):
     template_name = 'expenses_dashboard/expenses_dashboard.html'
     model = Expenses
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,7 +37,7 @@ class ExpensesDashboardView(LoginRequiredMixin, ListView):
 class ExpensesReportsListView(LoginRequiredMixin, ListView):
     template_name = 'expenses_dashboard/expenses_reports.html'
     model = Expenses
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,7 +65,7 @@ class ExpensesReportsListView(LoginRequiredMixin, ListView):
         return context
 
 
-@login_required(login_url="signin")    
+@login_required(login_url="account_login")    
 def expense_pdf_view(request):
     template_path = 'expenses_dashboard/expenses_pdf.html'
     response = HttpResponse(content_type='application/pdf')

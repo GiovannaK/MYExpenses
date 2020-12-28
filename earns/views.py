@@ -17,7 +17,7 @@ class EarnsListView(LoginRequiredMixin, FilterView):
     template_name = 'earns/earnings.html'
     context_object_name = 'earns'
     paginate_by = 6
-    login_url = 'signin'
+    login_url = 'account_login'
     filterset_class = EarningFilter
 
     def get_queryset(self):
@@ -51,7 +51,7 @@ class EarnsCreateView(LoginRequiredMixin, CreateView):
     model = Earns
     template_name = 'earns/add_earning.html'
     form_class = EarnsCreationForm
-    login_url = 'signin'
+    login_url = 'account_login'
     
     def form_valid(self, form):
         profile = Profile.objects.get(user=self.request.user)
@@ -77,7 +77,7 @@ class EarnsUpdateView(LoginRequiredMixin, UpdateView):
     model = Earns
     template_name = 'earns/update_earning.html'
     form_class = EarnsUpdateForm
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def form_valid(self, form):
         title_input = form.cleaned_data.get('title')
@@ -100,7 +100,7 @@ class EarnsUpdateView(LoginRequiredMixin, UpdateView):
 class EarnDeleteView(LoginRequiredMixin, DeleteView):
     model = Earns
     template_name = 'earns/delete_earn.html'
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)    

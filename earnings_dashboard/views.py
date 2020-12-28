@@ -15,7 +15,7 @@ from xhtml2pdf import pisa
 class EarningsDashboardView(LoginRequiredMixin, ListView):
     template_name = "earnings_dashboard/earnings_dashboard.html"
     model = Earns
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,7 +37,7 @@ class EarningsDashboardView(LoginRequiredMixin, ListView):
 class EarningsReportsListView(LoginRequiredMixin, ListView):
     template_name = 'earnings_dashboard/earnings_reports.html'
     model = Earns
-    login_url = 'signin'
+    login_url = 'account_login'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,7 +65,7 @@ class EarningsReportsListView(LoginRequiredMixin, ListView):
         return context
 
 
-login_required(login_url="signin")    
+login_required(login_url="account_login")    
 def earnings_pdf_view(request):
     template_path = 'earnings_dashboard/earnings_pdf.html'
     response = HttpResponse(content_type='application/pdf')

@@ -14,7 +14,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'profiles/profile.html'
     model = Profile
     form_class = ProfileForm
-    login_url = 'signin'
+    login_url = 'account_login'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -41,7 +41,7 @@ class ProfileUpdateInfoView(LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'profiles/update_user_info.html'    
     form_class = UpdateUserInfo
-    login_url = 'signin'
+    login_url = 'account_login'
     
     def form_valid(self, form):
        instance = form.save(commit=False)
