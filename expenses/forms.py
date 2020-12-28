@@ -17,6 +17,6 @@ class ExpenseUpdateForm(ModelForm):
         model = Expenses
         fields = ['category', 'description', 'date', 'title', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateInput(attrs={'type': 'date', 'class': 'datepicker'})
+            'date': DateInput(attrs={'type': 'text', 'class': 'datepicker'})
         }
 
