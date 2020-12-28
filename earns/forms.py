@@ -1,4 +1,4 @@
-from django.forms import ModelForm, DateTimeInput
+from django.forms import ModelForm, DateInput
 from .models import Earns
 from profiles.models import Profile
 from django.contrib.auth.models import User
@@ -9,7 +9,7 @@ class EarnsCreationForm(ModelForm):
         model = Earns
         fields = ['title', 'category', 'description', 'date', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'text', 'class': 'datepicker'})
+            'date': DateInput(attrs={'type': 'text', 'class': 'datepicker'})
         }
 
 
@@ -18,5 +18,5 @@ class EarnsUpdateForm(ModelForm):
         model = Earns
         fields = ['category', 'title', 'description', 'date', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'text', 'class': 'datepicker'})
+            'date': DateInput(attrs={'type': 'text', 'class': 'datepicker'})
         }

@@ -1,4 +1,4 @@
-from django.forms import ModelForm, DateTimeInput
+from django.forms import ModelForm, DateInput
 from .models import Expenses
 from django.forms import ValidationError
 
@@ -8,7 +8,7 @@ class ExpenseCreationForm(ModelForm):
         model = Expenses
         fields = ['category', 'description', 'date', 'title', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'text', 'class': 'datepicker'})
+            'date': DateInput(attrs={'type': 'text', 'class': 'datepicker'})
         }
 
 
@@ -17,6 +17,6 @@ class ExpenseUpdateForm(ModelForm):
         model = Expenses
         fields = ['category', 'description', 'date', 'title', 'quantity', 'currency', 'long_term']
         widgets = {
-            'date': DateTimeInput(attrs={'type': 'date', 'class': 'datepicker'})
+            'date': DateInput(attrs={'type': 'date', 'class': 'datepicker'})
         }
 
