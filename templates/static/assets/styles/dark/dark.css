@@ -800,6 +800,18 @@
   margin-top: 5vh;
 }
 
+.main-update .card {
+  background: #464646;
+}
+
+.main-update .add-exp-form i {
+  color: #815dc2;
+}
+
+.main-update .add-exp-form input {
+  color: white;
+}
+
 .main-update .add-exp-form input:focus {
   border-color: #815dc2;
 }

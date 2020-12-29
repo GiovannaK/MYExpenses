@@ -16,13 +16,16 @@ const deactivateDarkMode = () => {
 if(darkMode === 'active'){
 	activateDarkMode();
 }
-	
-checkbox.addEventListener('change', () => {
-	darkMode = localStorage.getItem('darkMode');
-	if(darkMode !== "active"){
-		activateDarkMode();
-	}else{
-		deactivateDarkMode();
-	}	
-	
-});
+
+
+if(checkbox){
+	checkbox.addEventListener('change', () => {
+		darkMode = localStorage.getItem('darkMode');
+		if(darkMode !== "active"){
+			activateDarkMode();
+		}else{
+			deactivateDarkMode();
+		}	
+		
+	});
+}

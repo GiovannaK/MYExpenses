@@ -6,9 +6,21 @@
     .card-container{
         margin-top: 5vh;
     }
+
+    .card{
+        background: $card-bg;
+    }
     
-    .add-exp-form input:focus{
-       border-color: $register-input-focus;
+    .add-exp-form input{
+        color: $title-color;
+
+        &:focus{
+            border-color: $register-input-focus;
+        }
+    }
+
+    .check-label span{
+        color: $title-color;
     }
 
     .add-exp-form textarea:focus{
