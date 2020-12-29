@@ -1,3 +1,5 @@
+@import '../utils/dark_variables';
+
 .main-landing-page{
     
     .slider .slides img{
@@ -26,10 +28,14 @@
         background-color: $section-info-bg;
 
         & .section-info-text{
-            color: $card-bg;
+            color: $title-color;
             font-size: 1.7rem;
             padding-left: 0.8rem;
         }
+    }
+
+    .card-resources{
+        background-color: $card-bg;
     }
 
     .parallax-landing-page{

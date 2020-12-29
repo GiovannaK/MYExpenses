@@ -1,4 +1,7 @@
-.main-exp-dash{
+@import '../utils/dark_variables';
+
+.main-earn-dash{
+
     .dash-tabs{
         & li a{
             color: $dashboard-label-color;
@@ -13,7 +16,7 @@
             background-color: $dashboard-label-color;
         }
     }
-
+    
     .title, .text-info{
         text-transform: uppercase;
         font-size: 2rem;
@@ -25,10 +28,6 @@
         font-size: 1.3rem;
         padding-bottom: 2rem;
     }
-    
-    .parallax-container{
-        height: 20vh;
-    }
-    
+
 }
 
