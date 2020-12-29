@@ -46,7 +46,7 @@ header.header-nav .logo, header.header-nav .sidenav-logo {
 }
 
 header.header-nav .logo {
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
 }
 
 header.header-nav .sidenav li a {
@@ -65,7 +65,7 @@ header.header-nav .collapse-title {
 
 header.header-nav .sidenav li a:hover {
   display: block;
-  background: #5599ff;
+  background: #008cff !important;
 }
 
 header.header-nav .sidenav-logo {
@@ -152,7 +152,7 @@ footer.dark .footer-text {
 }
 
 body {
-  background-color: #2c2c2c;
+  background-color: #ddd;
 }
 
 body.dark {

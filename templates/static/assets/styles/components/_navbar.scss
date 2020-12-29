@@ -16,7 +16,7 @@ header.header-nav{
     }    
 
     .logo{
-        color: $sidenav-bg;
+        color: $title-color-dark;
     }
     
     .sidenav li a{
@@ -34,7 +34,7 @@ header.header-nav{
     
     .sidenav li a:hover{
         display: block;
-        background: $sidenav-hover;
+        background: $register-input-focus;
     }
     
     .sidenav-logo{
