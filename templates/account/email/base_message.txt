@@ -1,4 +1,4 @@
-{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Olá!{% endblocktrans %}
+{% load i18n %}{% autoescape off %}{% blocktrans %}Olá!{% endblocktrans %}
 
 {% block content %}{% endblock %}
 

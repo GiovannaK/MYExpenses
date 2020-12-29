@@ -15,6 +15,7 @@
 							<h1 class="title-card center register-title">
 								Registre-se
 							</h1>
+							{{form.non_field_errors}}
 							<div class="row">
 								<form action="{% url 'account_signup' %}" method="POST" class="col s12 form-register" id="signup_form">
 									{% csrf_token %}
