@@ -50,6 +50,7 @@
         @include secondary-btn;
     }
 
+
     .btn-send{
         @include primary-btn;
     }
@@ -60,6 +61,10 @@
         &:focus{
             border-color: $form-profile-textarea-focus;
         }
+    }
+
+    .materialize-textarea{
+        color: $title-color;
     }
     
     .checkbox:checked+.lever{

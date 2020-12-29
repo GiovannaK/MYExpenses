@@ -1,9 +1,7 @@
 @import '../utils/variables';
 @import '../components/buttons';
 
-.main-login{
-    background-image: linear-gradient(rgba(0,0,0,0.4)), 
-    url("../../../assets/img/bg_login.jpg");    
+.main-login{    
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,7 +18,12 @@
 
         .login-btn{
             @include primary-btn;
+            background-color: $register-input-focus
         }
+    }
+
+    .form-register a{
+        color: $register-input-focus;
     }
 
     .form-register label{
@@ -28,8 +31,12 @@
         font-size: 1.2rem;
     }
 
-    .form-register input:focus{
-        border-color: $register-input-focus;
+    .form-register input{
+        color: $title-color;
+
+        &:focus{
+            border-color: $register-input-focus;
+        }
     }
 
     .title-card{

@@ -9,10 +9,12 @@
 
     .update-info-card{
         box-shadow: $box-shadow-card;
+        background-color: $card-bg;
     }
     
     .update-info-form input{
         border-color: $form-profile-textarea-border;
+        color: $title-color;
     
         &:focus{
             border-color: $register-input-focus;
@@ -36,6 +38,7 @@
     
     .change-user-info-btn{
         @include primary-btn;
+        background-color: $register-input-focus;
     }
 }
 

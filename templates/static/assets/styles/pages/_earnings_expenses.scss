@@ -15,6 +15,7 @@
 
     .card-filter{
         padding: 1rem;
+        background-color: $card-bg;
     }
 
     .title-filter{
@@ -25,22 +26,29 @@
         color: $register-input-focus;
     }
 
-    .filter-form input{
-        &:focus{
-            border-color: $register-input-focus;        
-        }
+    .select-wrapper .select-dropdown{
+        color: $title-color-dark;
+    }
+
+    
+    .filter-form label{
+        color: $title-color;
+    }
+
+    .filter-form input[type=text]{
+        color: $title-color;
     }
     
     .btn-filter{
         @include primary-btn;
-        background: $btn-bg
+        background: $btn-bg;
     }
 
     .search-input{
         padding-left: 4rem !important;
     
         &:focus{
-            border-color: $search-focus-boder;
+            border-color: $search-focus-border;
         }
     }
     
@@ -111,7 +119,7 @@
         padding-left: 4rem !important;
     
         &:focus{
-            border-color: $search-focus-boder;
+            border-color: $search-focus-border;
         }
     }
     

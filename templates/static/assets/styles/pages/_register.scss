@@ -21,6 +21,10 @@
             color: $form-label-color;
             font-size: 1rem;
         }
+
+        & input{
+            color: $title-color;
+        }
     
         & input:focus{
             border-color: $register-input-focus;
@@ -40,6 +44,7 @@
     
     .primary-btn{
         @include primary-btn;
+        background-color: $register-input-focus;
     }
     
     .register-title{
@@ -52,7 +57,7 @@
         text-transform: uppercase;
     
         &:hover{
-            color: $forgot-pass-color-hover;
+            color: $title-color;
         }
     }
 }

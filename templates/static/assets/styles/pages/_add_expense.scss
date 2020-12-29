@@ -17,6 +17,7 @@
     
     .card-exp{
         box-shadow: $box-shadow-card;
+        background-color: $card-bg;
     }
 
     .add-exp-form{
@@ -37,10 +38,15 @@
 
     .add-exp-form input, textarea{
         border-color: $card-font-color;  
+        color: $title-color;
         
         &:focus{
             border-color: $register-input-focus;        
         }
+    }
+
+    .check-label span{
+        color: $title-color;
     }
 
     .title-card{
@@ -60,6 +66,7 @@
 
     .btn-add{
         @include primary-btn;
+        background-color: $register-input-focus;
     }
 }
 

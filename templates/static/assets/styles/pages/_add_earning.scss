@@ -34,6 +34,15 @@
         color: $register-input-focus;
     }
 
+    .add-exp-form input, textarea{
+        border-color: $card-font-color;  
+        color: $title-color;
+        
+        &:focus{
+            border-color: $register-input-focus;        
+        }
+    }
+
     .update-icon{
         color: $register-input-focus;
     }
@@ -41,6 +50,11 @@
     .btn-add{
         @include primary-btn;
     }
+
+    .check-label span{
+        color: $title-color;
+    }
+
     
 }
 

@@ -6,6 +6,18 @@
         margin-bottom: 1rem !important;
         color: $card-font-color;
     }
+
+    .card-stacked{
+        background-color: $card-bg;
+    }
+
+    .row-card-report .card{
+        background-color: $card-bg;
+    }
+
+    td, th{
+        color: $card-font-color
+    }
     
     .text-card{
         font-size: 1.5rem;
@@ -15,6 +27,7 @@
     .report-value{
         padding-top: 1rem;
         font-size: 2rem;
+        color: $card-font-color;
     }
 
     .export-text{
