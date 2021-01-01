@@ -6,7 +6,7 @@ from profiles.models import Profile
 from django.db.models import Sum
 from django.db.models.functions import ExtractMonth, ExtractWeek, ExtractYear
 from django.contrib.auth.mixins import LoginRequiredMixin
-from earnings_dashboard.utils.custom_datetime_utils import start_date, end_date, initial_year, final_year, month_end, month_start, initial_three_months, final_three_months, initial_last_year, final_last_year, current_year
+from earnings_dashboard.utils.custom_datetime_utils import start_date, end_date, initial_year, final_year, month_end, month_start, initial_last_year, final_last_year, current_year, last_three_months
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
@@ -47,12 +47,12 @@ class ExpensesReportsListView(LoginRequiredMixin, ListView):
         currency_current_moment = query.values('currency__currency').annotate(sum=Sum('quantity')).order_by('currency')
         currency_current_month = currency_current_moment.filter(date__range=[month_start, month_end])
         currency_current_year = currency_current_moment.filter(date__range=[start_date, end_date])
-        currency_last_three_months = currency_current_moment.filter(date__range=[initial_three_months, final_three_months])
+        currency_last_three_months = currency_current_moment.filter(date__gte=last_three_months)
         currency_last_year = currency_current_moment.filter(date__range=[initial_last_year, final_last_year])
 
         total_current_year = query.filter(date__range=[start_date, end_date]).aggregate(Sum('quantity'))['quantity__sum']
         total_current_month = query.filter(date__range=[month_start, month_end]).aggregate(Sum('quantity'))['quantity__sum']
-        total_last_three_months = query.filter(date__range=[initial_three_months, final_three_months]).aggregate(Sum('quantity'))['quantity__sum']
+        total_last_three_months = query.filter(date__gte=last_three_months).aggregate(Sum('quantity'))['quantity__sum']
 
         context["currency_current_year"] = currency_current_year
         context["currency_current_moment"] = currency_current_moment
