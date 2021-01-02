@@ -181,4 +181,6 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 # Save in each request
 SESSION_SAVE_EVERY_REQUEST = False
 
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
 

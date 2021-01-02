@@ -10,6 +10,23 @@ services:
       - 8000:8000
     depends_on:
       - db
+    environment: 
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
+
+  celery:
+    build: .
+    command: celery -A core worker -l INFO
+    volumes:
+      - .:/code
+    environment:
+      - CELERY_BROKER=redis://redis:6379/0
+      - CELERY_BACKEND=redis://redis:6379/0
+    depends_on:
+      - web
+      - redis
+  redis:
+    image: "redis:alpine"      
   db:
     image: postgres:13
     environment:
@@ -18,6 +35,6 @@ services:
         POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-
 volumes:
     postgres_data:
+  
