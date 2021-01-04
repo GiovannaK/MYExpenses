@@ -1,0 +1,5 @@
+Olá, verifique se você efetuou o pagamento de suas despesas mensais.
+
+Acesse -> {{current_site | safe}}
+
+Obrigado por usar MYEXPENSES!

@@ -85,7 +85,7 @@ class ExpenseCreateView(LoginRequiredMixin, CreateView):
             instance.author = profile
             instance.currency = form.cleaned_data.get('currency')
             instance.category = form.cleaned_data.get('category')
-            instance.save()
+            instance.save()           
             messages.success(self.request, f'{title_input} foi criado com sucesso!')
             return super(ExpenseCreateView, self).form_valid(form)
         else:
