@@ -5,3 +5,6 @@ Acesse -> {{current_site | safe}}
 
 Obrigado por usar MYEXPENSES!
 
+Em caso de suspeita de phishing verifique se o domínio da plataforma está correto
+no e-mail.
+
