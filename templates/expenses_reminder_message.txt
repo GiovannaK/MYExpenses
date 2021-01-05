@@ -1,5 +1,7 @@
 Olá, verifique se você efetuou o pagamento de suas despesas mensais.
+Este e-mail é apenas um lembrete.
 
 Acesse -> {{current_site | safe}}
 
 Obrigado por usar MYEXPENSES!
+
