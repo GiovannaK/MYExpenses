@@ -1,11 +1,19 @@
-from django_filters import filters, FilterSet
+from django_filters import filters, FilterSet, DateFilter
 from .models import Earns
-from django.forms.widgets import DateTimeInput
+from django.forms.widgets import DateInput
 
 
 class EarningFilter(FilterSet):
-    date = filters.DateFilter(widget=DateTimeInput(attrs={'placeholder': 'dd/mm/aaaa', 'type': 'text', 'class': 'datepicker'}))
+    
+    start_date = DateFilter(field_name="date", lookup_expr="gte", widget=DateInput(attrs={
+        'placeholder': 'dd/mm/yyyy', 'type': 'text', 'class': 'datepicker'
+    }))
+    
+    end_date = DateFilter(field_name="date", lookup_expr="lte", widget=DateInput(attrs={
+        'placeholder': 'dd/mm/yyyy', 'type': 'text', 'class': 'datepicker'
+    }))
+
     class Meta:
         model = Earns
-        fields = ('category', 'long_term', 'currency', 'date')
+        fields = ('category', 'long_term', 'currency')
         
