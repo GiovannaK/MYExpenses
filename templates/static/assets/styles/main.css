@@ -176,7 +176,7 @@ body {
 }
 
 .main-content .filter-form input[type=text] {
-  color: #181818;
+  color: #2797ff !important;
 }
 
 .main-content .btn-filter {
@@ -806,7 +806,7 @@ body {
 }
 
 .main-content .filter-form input[type=text] {
-  color: #181818;
+  color: #2797ff !important;
 }
 
 .main-content .btn-filter {
