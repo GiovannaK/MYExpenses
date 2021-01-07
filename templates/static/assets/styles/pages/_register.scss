@@ -29,6 +29,11 @@
         }
     }
 
+    ::placeholder{
+        color: $register-input-focus;
+        opacity: 1;
+    }
+
     .title-card{
         font-size: 1.7rem;
         margin-bottom: 1rem !important;

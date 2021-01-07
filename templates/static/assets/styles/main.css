@@ -274,6 +274,26 @@ body {
   border-color: #008cff !important;
 }
 
+.main-register ::-webkit-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-register :-ms-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-register ::-ms-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-register ::placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
 .main-register .title-card {
   font-size: 1.7rem;
   margin-bottom: 1rem !important;
@@ -346,6 +366,26 @@ body {
 
 .main-login .card-login .login-btn:hover {
   background: #007ac0;
+}
+
+.main-login ::-webkit-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-login :-ms-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-login ::-ms-input-placeholder {
+  color: #008cff !important;
+  opacity: 1;
+}
+
+.main-login ::placeholder {
+  color: #008cff !important;
+  opacity: 1;
 }
 
 .main-login .form-register a {

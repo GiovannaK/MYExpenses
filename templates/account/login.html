@@ -5,8 +5,6 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block title %} Login {% endblock %}
-
 {% block content %}
 
 	<main class="main-login" style="background-image: url('{% static 'assets/img/bg_login.jpg' %}')">
@@ -25,20 +23,14 @@
 								<p class="text-card">{% blocktrans with site.name as site_name %}Please sign in with one
 								of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
 								for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-								
 								<div class="socialaccount_ballot">
-								
 									<ul class="socialaccount_providers">
 									  	{% include "socialaccount/snippets/provider_list.html" with process="login" %}
 									</ul>
-								
 									<div class="login-or">{% trans 'or' %}</div>
-								
 								</div>
-							
 								{% include "socialaccount/snippets/login_extra.html" %}
 								{% endif %}
-
 								<div class="row">
 									<form class="login form-register" method="POST" action="{% url 'account_login' %}">
 										{% csrf_token %}

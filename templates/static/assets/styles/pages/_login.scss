@@ -21,6 +21,11 @@
         }
     }
 
+    ::placeholder{
+        color: $register-input-focus;
+        opacity: 1;
+    }
+
     .form-register a{
         color: $register-input-focus;
     }
