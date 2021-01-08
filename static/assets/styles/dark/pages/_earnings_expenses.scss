@@ -1,0 +1,100 @@
+@import '../components/buttons';
+@import '../utils/dark_variables';
+
+.main-content{
+    .search-container, .card-container{
+        margin-top: 5vh;
+    }
+    
+    .title{
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        color: $title-color;
+    }
+
+    .card-filter{
+        padding: 1rem;
+        background-color: $card-bg;
+    }
+
+    .title-filter{
+        margin-bottom: 1rem;
+    }
+
+    .filter-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
+
+    .select-wrapper .select-dropdown{
+        color: $title-color;
+    }
+
+    
+    .filter-form label{
+        color: $title-color;
+    }
+
+    .filter-form input[type=text]{
+        color: $datepicker-colors;
+    }
+    
+    .btn-filter{
+        @include primary-btn;
+        background: $btn-bg;
+    }
+
+    .search-input{
+        padding-left: 4rem !important;
+    
+        &:focus{
+            border-color: $search-focus-border;
+        }
+    }
+    
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .card-expense{
+        box-shadow: $box-shadow-card;
+        background-color: $card-bg;
+    }
+    
+    .card-expense{
+        transition: .5s;
+         &:hover{
+             transform: scale(1.03);
+         }
+    }
+    
+    .card-expense .card-reveal{
+        background-color: $card-bg;
+    }
+    
+    .float-btn{
+        background-color: $btn-bg;
+        
+        &:hover{
+            background-color: $btn-bg-hover;
+        }
+    
+    }
+    
+    .float-btn-content{
+        background-color: $float-btn-content-bg-color;
+    
+        &:hover{
+            background-color: $float-btn-content-bg-color-hover;
+        }
+    }
+
+}
+

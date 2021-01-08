@@ -1,0 +1,59 @@
+@import '../utils/dark_variables';
+
+.main-add-earn{
+    background-image: url('../../../assets/img/bg-add-earn.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .card-content{
+        padding: 3rem;
+    }
+
+    .card-exp{
+        background-color: $card-bg;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+
+    .add-exp-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
+
+    .add-exp-form input, textarea{
+        border-color: $card-font-color;  
+        color: $title-color;
+        
+        &:focus{
+            border-color: $register-input-focus;        
+        }
+    }
+
+    .update-icon{
+        color: $register-input-focus;
+    }
+
+    .btn-add{
+        @include primary-btn;
+    }
+
+    .check-label span{
+        color: $title-color;
+    }
+
+    
+}
+

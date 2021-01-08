@@ -1,0 +1,9 @@
+@import '../utils/variables';
+
+.datepicker-date-display, .datepicker-table td.is-selected{
+    background-color: $datepicker-colors;
+}
+
+.datepicker-cancel, .datepicker-done{
+    color: $datepicker-colors;
+}

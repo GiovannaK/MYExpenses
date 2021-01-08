@@ -1,0 +1,64 @@
+@import '../utils/dark_variables';
+
+.main-register{
+    //background-image: url("../../../assets/img/bg-register.jpg");
+    height: 100%;
+    background-repeat: no-repeat;  
+    background-size: cover;  
+
+    .register-container{
+        margin-top: 10vh;
+    }
+    
+    .card-register{
+        box-shadow: $box-shadow-card;
+        background-color: $card-register-bg;
+    }
+    
+    .form-register{
+    
+        & label{
+            color: $form-label-color;
+            font-size: 1rem;
+        }
+
+        & input{
+            color: $title-color;
+        }
+    
+        & input:focus{
+            border-color: $register-input-focus;
+        }
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .primary-btn{
+        @include primary-btn;
+        background-color: $register-input-focus;
+    }
+    
+    .register-title{
+        margin-bottom: 4rem !important;
+        text-transform: uppercase;
+    }
+    
+    .forgot-pass-text{
+        color: $forgot-pass-color;
+        text-transform: uppercase;
+    
+        &:hover{
+            color: $title-color;
+        }
+    }
+}
+

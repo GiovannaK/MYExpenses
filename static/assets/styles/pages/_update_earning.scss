@@ -1,0 +1,30 @@
+@import '../components/buttons';
+
+
+.main-update{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+    
+    .add-exp-form input:focus{
+       border-color: $register-input-focus;
+    }
+
+    .add-exp-form textarea:focus{
+        border-color: $register-input-focus;
+    }
+    
+    .btn-update{
+        @include primary-btn;
+    }
+
+    .update-icon{
+        color: $register-input-focus;        
+    }
+
+    .card-content-exp{
+        padding: 1.5rem 2.5rem;
+    }
+}
+

@@ -1,0 +1,53 @@
+@import '../utils/dark_variables';
+@import '../components/buttons';
+
+.main-login{    
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .card-login{
+        box-shadow: $box-shadow-card;
+        background: $card-register-bg;  
+        padding: 0.5rem 2rem;  
+
+        .login-btn{
+            @include primary-btn;
+            background-color: $register-input-focus
+        }
+    }
+
+    .form-register a{
+        color: $register-input-focus;
+    }
+
+    .form-register label{
+        color: $card-font-color;
+        font-size: 1.2rem;
+    }
+
+    .form-register input{
+        color: $title-color;
+
+        &:focus{
+            border-color: $register-input-focus;
+        }
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+}
+

@@ -1,0 +1,72 @@
+@import '../components/buttons';
+@import '../utils/dark_variables';
+
+.main-add-exp{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .card-content{
+        padding: 2rem;
+    }
+    
+    .card-exp{
+        box-shadow: $box-shadow-card;
+        background-color: $card-bg;
+    }
+
+    .add-exp-form{
+        padding: 0.8rem;
+    }
+
+    .add-exp-form input, textarea, label{
+        color: $card-font-color;
+    
+        &:focus + label{
+            color: $register-input-focus;
+        }
+    }
+
+    .add-exp-form ul.dropdown-content.select-dropdown li span{
+        color: $register-input-focus;
+    }
+
+    .add-exp-form input, textarea{
+        border-color: $card-font-color;  
+        color: $title-color;
+        
+        &:focus{
+            border-color: $register-input-focus;        
+        }
+    }
+
+    .check-label span{
+        color: $title-color;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+
+    .update-icon{
+        color: $register-input-focus;
+    }
+
+    .btn-add{
+        @include primary-btn;
+        background-color: $register-input-focus;
+    }
+}
+

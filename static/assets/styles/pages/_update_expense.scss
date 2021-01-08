@@ -1,0 +1,43 @@
+.main-update{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .add-exp-form input:focus{
+       border-color: $register-input-focus;
+    }
+
+    .add-exp-form textarea:focus{
+        border-color: $register-input-focus;
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 3rem !important;
+        color: $card-font-color;
+
+    }
+
+    .card-content-exp{
+        padding: 1.5rem 2.5rem;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+    
+    .btn-update{
+        @include primary-btn;
+    }
+
+    .update-icon{
+        color: $register-input-focus;        
+    }
+}
+

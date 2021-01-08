@@ -1,0 +1,52 @@
+@import '../utils/variables';
+
+header.header-nav{
+    .navbar{
+        background: $bg-nav-footer;
+    }
+    
+    .sidenav{
+        background-color: $sidenav-bg;
+        
+    }
+    
+    .logo, .sidenav-logo{
+        text-shadow: $text-shadow-logo;
+        color: $sidenav-color;
+    }    
+
+    .logo{
+        color: $title-color;
+    }
+    
+    .sidenav li a{
+        font-size: 1.2rem;
+        text-transform: uppercase; 
+        color: $sidenav-color;   
+        transition: .5s;
+    }
+    
+    .collapse-title{
+        color: $sidenav-color;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+    
+    .sidenav li a:hover{
+        display: block;
+        background: $register-input-focus;
+    }
+    
+    .sidenav-logo{
+        font-size: 2rem;
+    }
+    
+    .collapsible-body{
+        background: $sidenav-bg;
+    }
+
+    .bg-img-sidenav{
+        filter: brightness(40%);
+    }
+}
+

@@ -1,0 +1,73 @@
+@import '../components/buttons';
+@import '../utils/dark_variables';
+
+.main-profile{
+
+    .card-container{
+        margin-top: 5vh;
+    }
+
+    .profile-card{
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.1rem;
+        box-shadow: $box-shadow-card;
+        background: $card-bg;
+    
+        & .card-content a{
+            display: block;
+            transition: .5s;
+            
+            &:hover{
+                background-color: $sidenav-hover;    
+            }    
+        }
+    }
+
+    .title-card{
+        font-size: 1.7rem;
+        margin-bottom: 1rem !important;
+        color: $card-font-color;
+    }
+    
+    .text-card{
+        font-size: 1.5rem;
+        color: $card-font-color;
+    }
+
+    .profile-img img{
+        border-radius: 50% !important;
+    }
+    
+    .divider{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .secondary-btn{
+        @include secondary-btn;
+    }
+
+
+    .btn-send{
+        @include primary-btn;
+    }
+    
+    .form-profile textarea{
+        border-color: $form-profile-textarea-border;
+    
+        &:focus{
+            border-color: $form-profile-textarea-focus;
+        }
+    }
+
+    .materialize-textarea{
+        color: $title-color;
+    }
+    
+    .checkbox:checked+.lever{
+        @include primary-switch;
+    }
+}
+

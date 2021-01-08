@@ -1,0 +1,25 @@
+@import '../utils/dark_variables';
+
+.msg-success, .msg-error, .msg-warning, .msg-info{
+    background-color: $msg-bg-success;
+
+    a{
+        color: $msg-font-colors;
+    }
+
+    & p{
+        color: $msg-font-colors;
+    }
+}
+
+.msg-error{
+    background-color: $msg-bg-error;    
+}
+
+.msg-warning{
+    background-color: $msg-bg-warning;
+}
+
+.msg-info{
+    background-color: $msg-bg-info;
+}
