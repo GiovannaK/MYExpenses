@@ -12,7 +12,7 @@
     }
     
     .add-exp-form input{
-        color: $title-color;
+        color: $datepicker-colors;
 
         &:focus{
             border-color: $register-input-focus;
@@ -23,13 +23,14 @@
         color: $title-color;
     }
 
+    .btn-update{
+        @include primary-btn;
+    }
+
     .add-exp-form textarea:focus{
         border-color: $register-input-focus;
     }
     
-    .btn-update{
-        @include primary-btn;
-    }
 
     .update-icon{
         color: $register-input-focus;        
