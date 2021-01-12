@@ -18,18 +18,26 @@
 						<div class="card card-login">
 							<div class="card-content">
 								<h1 class="title-card center">{% trans "Login" %}</h1>
-
+								<br>
 								{% get_providers as socialaccount_providers %}
 
 								{% if socialaccount_providers %}
-								<p class="text-card">{% blocktrans with site.name as site_name %}Please sign in with one
-								of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-								for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 								<div class="socialaccount_ballot">
 									<ul class="socialaccount_providers">
-									  	{% include "socialaccount/snippets/provider_list.html" with process="login" %}
+										<div class="row center">
+											<div class="col s4 l4 m4">
+												<a href="/accounts/google/login/?process=login">
+													<i class="fab fa-google red-text small"></i></a>
+											</div>
+											<div class="col s4 m4 l4">
+												<a href="#"><i class="fab fa-github small"></i></a>
+											</div>
+											<div class="col s4 m4 l4">
+												<a href="#"><i class="fab fa-facebook-f indigo-text small"></i></a>	
+											</div>
+										</div>
+										{% include "socialaccount/snippets/provider_list.html" with process="login" %}										
 									</ul>
-									<div class="login-or">{% trans 'or' %}</div>
 								</div>
 								{% include "socialaccount/snippets/login_extra.html" %}
 								{% endif %}
