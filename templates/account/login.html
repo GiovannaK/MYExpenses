@@ -26,11 +26,11 @@
 									<ul class="socialaccount_providers">
 										<div class="row center">
 											<div class="col s4 l4 m4">
-												<a href="/accounts/google/login/?process=login">
+												<a href="{% provider_login_url 'google' %}">
 													<i class="fab fa-google red-text small"></i></a>
 											</div>
 											<div class="col s4 m4 l4">
-												<a href="#"><i class="fab fa-github small"></i></a>
+												<a href="{% provider_login_url 'github' %}"><i class="fab fa-github small"></i></a>
 											</div>
 											<div class="col s4 m4 l4">
 												<a href="#"><i class="fab fa-facebook-f indigo-text small"></i></a>	
