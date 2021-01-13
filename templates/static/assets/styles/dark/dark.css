@@ -463,7 +463,7 @@
 }
 
 .main-add-exp .add-exp-form input, .main-add-exp textarea, .main-add-exp label {
-  color: white;
+  color: #2797ff !important;
 }
 
 .main-add-exp .add-exp-form input:focus + label, .main-add-exp textarea:focus + label, .main-add-exp label:focus + label {
@@ -549,7 +549,7 @@
 
 .main-add-earn .add-exp-form input, .main-add-earn textarea {
   border-color: white;
-  color: white;
+  color: #2797ff !important;
 }
 
 .main-add-earn .add-exp-form input:focus, .main-add-earn textarea:focus {

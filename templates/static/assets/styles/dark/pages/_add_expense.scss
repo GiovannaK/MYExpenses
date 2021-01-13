@@ -25,7 +25,7 @@
     }
 
     .add-exp-form input, textarea, label{
-        color: $card-font-color;
+        color: $datepicker-colors;
     
         &:focus + label{
             color: $register-input-focus;
