@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myexpensesweb.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -187,8 +187,8 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 # Save in each request
 SESSION_SAVE_EVERY_REQUEST = False
 
-CELERY_BROKER_URL = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
-CELERY_RESULT_BACKEND = os.environ.get("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_BROKER_URL = os.environ.get("REDIS_URI", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get("REDIS_URI", "redis://redis:6379/0")
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')

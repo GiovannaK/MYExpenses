@@ -11,8 +11,8 @@ services:
     depends_on:
       - db
     environment: 
-      - CELERY_BROKER=redis://redis:6379/0
-      - CELERY_BACKEND=redis://redis:6379/0
+      CELERY_BROKER: ${REDIS_URI}
+      CELERY_BACKEND: ${REDIS_URI}
 
   celery:
     build: .
@@ -20,8 +20,8 @@ services:
     volumes:
       - .:/code
     environment:
-      - CELERY_BROKER=redis://redis:6379/0
-      - CELERY_BACKEND=redis://redis:6379/0
+      CELERY_BROKER: ${REDIS_URI}
+      CELERY_BACKEND: ${REDIS_URI}
     depends_on:
       - web
       - redis
