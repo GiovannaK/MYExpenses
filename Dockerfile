@@ -7,6 +7,6 @@ WORKDIR /code
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-CMD gunicorn --bind 0.0.0.0:$PORT config.wsgi
+CMD gunicorn --bind 0.0.0.0:$PORT core.wsgi
 
 COPY . .
