@@ -38,7 +38,7 @@ Find yourself here
 ---
 
 ## Description
-MYExpenses is a web app to manage earnings and expenses, view earnings and spend data in dynamic graphs, generate reports and receive reminders about monthly expenses.
+MYExpenses is a web app to manage earnings and expenses, view earnings and expenses data in dynamic graphs, generate reports and receive reminders about monthly expenses.
 
 ## Technologies
 
