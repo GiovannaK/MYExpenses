@@ -95,7 +95,6 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and expen
 - First to fourth week of the current month
 - View the amount of your earnings and expenses by category
 - See the amount in the last five years
----
 
 ### Reports
 - View your earnings and expenses by currency including:
@@ -110,6 +109,8 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and expen
 
 ### Export PDF
 - You can export your report data in pdf format
+
+---
 
 ## How To Use
 
