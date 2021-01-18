@@ -105,6 +105,9 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and expen
 - Earnings or Expenses per currency in the last three months
 - Current Earanings or Expenses per currency
 
+### Email Reminders
+- When adding monthly expenses you receive emails on the 1st and 15th every month.
+
 ### Export PDF
 - You can export your report data in pdf format
 
