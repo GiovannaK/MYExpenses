@@ -90,7 +90,7 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and expen
 - if you have a lot of earnings and expenses you can search by title, description or value
 
 ### Dashboards
-- See your earnings and spend on interactive charts dynamically including:
+- See your earnings and expenses on interactive charts dynamically including:
 - Earnings and Expenses from January to December in the current year
 - First to fourth week of the current month
 - View the amount of your earnings and expenses by category
@@ -119,7 +119,7 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and expen
 ### Clone the project
 
 ```html
-git clone https://github.com/GiovannaK/Weather-app-django.git
+git clone https://github.com/GiovannaK/MYExpenses.git
 ```
 ### Create and start a virtual environment
 
