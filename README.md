@@ -2,8 +2,8 @@
 
 ## See preview here: https://myexpenses-service.herokuapp.com/
 ### Demo Credentials
-- user: demo
-- password: myexpenses
+- User:    demo
+- Password:    myexpenses
 ---
 ![Project Image](static/assets/img/landing_page.png)
 
