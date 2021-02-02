@@ -38,7 +38,7 @@ Find yourself here
 ---
 
 ## Description
-MYExpenses is a web app to manage earnings and expenses, view earnings and spend data in dynamic graphs, generate reports and receive reminders about monthly expenses.
+MYExpenses is a web app to manage earnings and expenses, view earnings and expenses data in dynamic graphs, generate reports and receive reminders about monthly expenses.
 
 ## Technologies
 
@@ -90,12 +90,11 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and spend
 - if you have a lot of earnings and expenses you can search by title, description or value
 
 ### Dashboards
-- See your earnings and spend on interactive charts dynamically including:
+- See your earnings and expenses on interactive charts dynamically including:
 - Earnings and Expenses from January to December in the current year
 - First to fourth week of the current month
 - View the amount of your earnings and expenses by category
 - See the amount in the last five years
----
 
 ### Reports
 - View your earnings and expenses by currency including:
@@ -105,8 +104,13 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and spend
 - Earnings or Expenses per currency in the last three months
 - Current Earanings or Expenses per currency
 
+### Email Reminders
+- When adding monthly expenses you receive emails on the 1st and 15th every month.
+
 ### Export PDF
 - You can export your report data in pdf format
+
+---
 
 ## How To Use
 
@@ -115,7 +119,7 @@ MYExpenses is a web app to manage earnings and expenses, view earnings and spend
 ### Clone the project
 
 ```html
-git clone https://github.com/GiovannaK/Weather-app-django.git
+git clone https://github.com/GiovannaK/MYExpenses.git
 ```
 ### Create and start a virtual environment
 
